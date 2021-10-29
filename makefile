@@ -2,6 +2,8 @@ MD_FILES = docs/title.md docs/cli.md docs/pm.md docs/dsl.md docs/make.md docs/gi
 HTML_FILE = build/scm.html
 PDF_FILE = build/scm.pdf
 
+RM = powershell rm
+
 all: html pdf
 
 html: $(HTML_FILE)
@@ -14,6 +16,7 @@ $(HTML_FILE): $(MD_FILES)
 $(PDF_FILE): $(MD_FILES)
 	pandoc $(MD_FILES) --from=markdown+tex_math_single_backslash+tex_math_dollars+raw_tex --to=latex --output=$(PDF_FILE) --pdf-engine=xelatex --toc
 
-#clean:
-#	rm -f $(HTML_FILE)
-#	rm -f $(PDF_FILE)
+clean:
+	$(RM) $(HTML_FILE)
+	$(RM) $(PDF_FILE)
+
