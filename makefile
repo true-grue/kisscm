@@ -3,7 +3,7 @@ MD_FILES = docs/cli.md docs/pm.md docs/dsl.md docs/make.md docs/git.md docs/doc.
 HTML_FILE = build/scm.html
 PDF_FILE = build/scm.pdf
 
-OPTIONS = --from=markdown+tex_math_single_backslash+tex_math_dollars+raw_tex --toc
+OPTIONS = -d kisscm.yaml --from=markdown+tex_math_single_backslash+tex_math_dollars+raw_tex --toc
 RM = powershell rm
 
 all: html pdf
