@@ -1,0 +1,12 @@
+title: Конфигурационное управление
+author: П.Н. Советов
+date: 2021
+documentclass: extarticle
+mainfont: 'PT Serif'
+monofont: 'Consolas'
+fontsize: 14pt
+geometry: margin=2cm
+header-includes: |
+    \usepackage{polyglossia}
+    \setmainlanguage{russian}
+    \setotherlanguage{english}
