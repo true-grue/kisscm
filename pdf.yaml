@@ -9,3 +9,8 @@ header-includes: |
     \setotherlanguage{english}
     \usepackage{caption}
     \captionsetup[figure]{font={normalfont},format=plain,labelsep=period}
+    \usepackage{fvextra}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+    \let\oldsection\section
+    \renewcommand\section{\clearpage\oldsection}
+
