@@ -11,6 +11,10 @@
 1. Виртуализация и контейнеризация.
 1. Системы управления проектами.
 
+## Плагины
+
+Используется плагин [pandoc-crossref](https://lierdakil.github.io/pandoc-crossref/).
+
 ## Шрифты
 
 Для PDF используются шрифты от [Paratype](http://rus.paratype.ru/pt-sans-pt-serif).

@@ -4,7 +4,7 @@ HTML_FILE = build/kisscm.html
 PDF_FILE = build/kisscm.pdf
 DOCX_FILE = build/kisscm.docx
 
-OPTIONS = -d kisscm.yaml --from=markdown+tex_math_single_backslash+tex_math_dollars+raw_tex --toc --resource-path=images
+OPTIONS = -d kisscm.yaml --from=markdown+tex_math_single_backslash+tex_math_dollars+raw_tex --toc --resource-path=images -F pandoc-crossref
 RM = powershell rm
 
 all: html pdf docx
