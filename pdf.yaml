@@ -7,3 +7,5 @@ header-includes: |
     \usepackage{polyglossia}
     \setmainlanguage{russian}
     \setotherlanguage{english}
+    \usepackage{caption}
+    \captionsetup[figure]{font={normalfont},format=plain,labelsep=period}
