@@ -1,7 +1,7 @@
 documentclass: extarticle
 mainfont: 'PT Serif'
 monofont: 'Consolas'
-fontsize: 14pt
+fontsize: 12pt
 geometry: margin=2cm
 header-includes: |
     \usepackage{polyglossia}
@@ -12,5 +12,15 @@ header-includes: |
     \usepackage{fvextra}
     \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
     \let\oldsection\section
-    \renewcommand\section{\clearpage\oldsection}
+    \usepackage{hyperref}
+    \hypersetup{
+        colorlinks=true,
+        linkcolor=black,
+        filecolor=magenta,      
+        urlcolor=black
+    }
+    \usepackage{indentfirst}
+
+
+
 

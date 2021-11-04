@@ -4,8 +4,7 @@ HTML_FILE = build/kisscm.html
 PDF_FILE = build/kisscm.pdf
 DOCX_FILE = build/kisscm.docx
 
-OPTIONS = -d kisscm.yaml --from=markdown+tex_math_single_backslash+tex_math_dollars+raw_tex --toc --resource-path=images -F pandoc-crossref
-RM = powershell rm
+OPTIONS = -d kisscm.yaml --from=markdown+tex_math_single_backslash+tex_math_dollars+raw_tex --toc --resource-path=images -F pandoc-crossref --number-sections
 
 all: html pdf docx
 
@@ -19,12 +18,11 @@ $(HTML_FILE): $(MD_FILES)
 	pandoc $(MD_FILES) $(OPTIONS) --output=$(HTML_FILE) --to=html5 --mathjax --self-contained
 
 $(PDF_FILE): $(MD_FILES)
-	pandoc $(MD_FILES) $(OPTIONS) --metadata-file=pdf.yaml --output=$(PDF_FILE) --to=latex --pdf-engine=xelatex
+	pandoc $(MD_FILES) $(OPTIONS) --metadata-file pdf.yaml --output=$(PDF_FILE) --to=latex --pdf-engine=xelatex
 
 $(DOCX_FILE): $(MD_FILES)
-	pandoc $(MD_FILES) $(OPTIONS) --output=$(DOCX_FILE) --to=docx
+	pandoc $(MD_FILES) $(OPTIONS) --reference-doc=template.docx --output=$(DOCX_FILE) --to=docx
+	python bullet.py $(DOCX_FILE)
 
 clean:
-	$(RM) $(HTML_FILE)
-	$(RM) $(PDF_FILE)
-	$(RM) $(DOCX_FILE)
+	powershell rm build/*.*
