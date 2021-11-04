@@ -6,7 +6,7 @@ metadata:
   figPrefix: рис.
   titleDelim: .
   tableTitle: Таблица
-  tblPrefix: таб.
+  tblPrefix: табл.
   toc-title: "Оглавление"
   secnumdepth: 3
 
