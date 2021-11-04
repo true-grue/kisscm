@@ -1,0 +1,16 @@
+documentclass: extarticle
+mainfont: 'PT Serif'
+monofont: 'Consolas'
+fontsize: 14pt
+geometry: margin=2cm
+header-includes: |
+    \usepackage{polyglossia}
+    \setmainlanguage{russian}
+    \setotherlanguage{english}
+    \usepackage{caption}
+    \captionsetup[figure]{font={normalfont},format=plain,labelsep=period}
+    \usepackage{fvextra}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+    \let\oldsection\section
+    \renewcommand\section{\clearpage\oldsection}
+
