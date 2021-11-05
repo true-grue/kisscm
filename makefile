@@ -22,7 +22,7 @@ $(PDF_FILE): $(MD_FILES)
 
 $(DOCX_FILE): $(MD_FILES)
 	pandoc $(MD_FILES) $(OPTIONS) --reference-doc=template.docx --output=$(DOCX_FILE) --to=docx
-	python bullet.py $(DOCX_FILE)
+	python filters/bullets.py $(DOCX_FILE)
 
 clean:
 	powershell rm build/*.*
