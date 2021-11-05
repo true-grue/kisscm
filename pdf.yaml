@@ -1,7 +1,7 @@
 documentclass: extarticle
 mainfont: 'PT Serif'
 monofont: 'Consolas'
-fontsize: 12pt
+fontsize: 14pt
 geometry: margin=2cm
 header-includes: |
     \usepackage{polyglossia}
