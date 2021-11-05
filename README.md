@@ -8,6 +8,7 @@
 * Установить плагин [pandoc-crossref](https://lierdakil.github.io/pandoc-crossref/).
 * Установить [make для Windows](http://gnuwin32.sourceforge.net/packages/make.htm).
 * Установить [Python 3](https://www.python.org/downloads/).
+* Установить [rsvg-convert](http://sourceforge.net/projects/tumagcc/files/rsvg-convert-2.40.20.7z/download).
 * Для PDF установить шрифты от [Paratype](http://rus.paratype.ru/pt-sans-pt-serif).
 
 ## Задачи
