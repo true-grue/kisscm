@@ -2,9 +2,9 @@
 
 ## Установка
 
-В настоящий момент сборка проекта настроена для ОС Windows. Для редактирования используется [Visual Studio Code](https://code.visualstudio.com/download).
+Сборка проекта настроена для ОС Windows. Для редактирования используется [Visual Studio Code](https://code.visualstudio.com/download).
 
-* Устанвить [pandoc](https://pandoc.org/).
+* Установить [pandoc](https://pandoc.org/).
 * Установить плагин [pandoc-crossref](https://lierdakil.github.io/pandoc-crossref/).
 * Установить [make для Windows](http://gnuwin32.sourceforge.net/packages/make.htm).
 * Установить [Python 3](https://www.python.org/downloads/).
@@ -35,12 +35,6 @@
 |make2.png|  |
 |make1.png|  |
 |pm1.png|  |
-
-
-
-
-
-
 
 Формирование HMTL
 
