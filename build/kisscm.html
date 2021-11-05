@@ -298,14 +298,13 @@ Object.defineProperty(e,"__esModule",{value:!0}),e.mhchemParser=void 0;var r=fun
 <p>“Программная инженерия — это то, что происходит с программированием при добавлении времени и других программистов” (Russ Cox).</p>
 <p>Отслеживание и управление изменениями в ПО — важная задача, которая возникает даже при работе над небольшими индивидуальными проектами. В этом курсе предлагается практико-ориентированный взгляд на конфигурационное управление. Изучаемые темы:</p>
 <ul>
+<li>командная строка,</li>
 <li>менеджеры пакетов,</li>
 <li>конфигурационные языки,</li>
 <li>системы автоматизации сборки,</li>
 <li>системы контроля версий,</li>
-<li>контейнеризация приложений,</li>
-<li>непрерывная интеграция,</li>
-<li>системы управления проектами и задачами,</li>
-<li>генераторы документации.</li>
+<li>генераторы документации,</li>
+<li>виртуализация и контейнеризация приложений.</li>
 </ul>
 <p>Изначально управление конфигурацией применялось не в программировании. Под конфигурацией понимался состав деталей конечного продукта и «взаимное расположение частей» физического изделия. Таким образом, конфигурацией можно управлять, контролируя документы, описывающие конечный продукт, требования к нему, всю его проектную и технологическую документацию.</p>
 <p>В связи с высокой динамичностью сферы разработки ПО, в ней конфигурационное управление особенно полезно. К процедурам можно отнести:</p>
@@ -382,25 +381,25 @@ Object.defineProperty(e,"__esModule",{value:!0}),e.mhchemParser=void 0;var r=fun
 </ul>
 <p>Далее будет рассматриваться современный вариант UNIX, поплуярная ОС Linux, разработанная в 1991 году Линусом Торвальдсом (в те времена — студентом финского университета).</p>
 <p>При работе с командной строкой необходимо учитывать структуру файловой системы. В Linux она имеет следующий вид:</p>
-<pre><code>localhost:~# tree -d -L 1 /
-/
-├── bin
-├── dev
-├── etc
-├── home
-├── lib
-├── media
-├── mnt
-├── opt
-├── proc
-├── root
-├── run
-├── sbin
-├── srv
-├── sys
-├── tmp
-├── usr
-└── var</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>localhost:~# tree -d -L 1 /</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>/</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>├── bin</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>├── dev</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>├── etc</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>├── home</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>├── lib</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>├── media</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>├── mnt</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>├── opt</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>├── proc</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>├── root</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>├── run</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>├── sbin</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>├── srv</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>├── sys</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>├── tmp</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>├── usr</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>└── var</span></code></pre></div>
 <p>Имя <code>/</code> является корнем (root) файловой системы. Внутри корня расположены следующие, наиболее значимые каталоги:</p>
 <ul>
 <li>bin. Исполняемые файлы системных утилит.</li>
@@ -424,30 +423,30 @@ Object.defineProperty(e,"__esModule",{value:!0}),e.mhchemParser=void 0;var r=fun
 <img src="data:image/png;base64,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" id="fig:cli1" alt="Рис. 5. Архитектура интерпретатора Bash" /><figcaption aria-hidden="true">Рис. 5. Архитектура интерпретатора Bash</figcaption>
 </figure>
 <p>Ниже показан пример сеанса работы в Bash:</p>
-<pre><code>localhost:~# pwd
-/root
-localhost:~# ls -l
-total 16
--rw-r--r--    1 root     root           114 Jul  5  2020 bench.py
--rw-r--r--    1 root     root            76 Jul  3  2020 hello.c
--rw-r--r--    1 root     root            22 Jun 26  2020 hello.js
--rw-r--r--    1 root     root           151 Jul  5  2020 readme.txt
-localhost:~# echo &#39;new file&#39; &gt; new_file.txt
-localhost:~# cat new_file.txt
-new file
-localhost:~# mkdir new_dir
-localhost:~# cp new_file.txt new_dir/
-localhost:~# rm new_file.txt
-localhost:~# ls -l
-total 20
--rw-r--r--    1 root     root           114 Jul  5  2020 bench.py
--rw-r--r--    1 root     root            76 Jul  3  2020 hello.c
--rw-r--r--    1 root     root            22 Jun 26  2020 hello.js
-drwxr-xr-x    2 root     root            66 Nov  4 17:16 new_dir
--rw-r--r--    1 root     root           151 Jul  5  2020 readme.txt
-localhost:~# ls -l new_dir/
-total 4
--rw-r--r--    1 root     root             9 Nov  4 17:16 new_file.txt</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>localhost:~# pwd</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>/root</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>localhost:~# ls -l</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>total 16</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>-rw-r--r--    1 root     root           114 Jul  5  2020 bench.py</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>-rw-r--r--    1 root     root            76 Jul  3  2020 hello.c</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>-rw-r--r--    1 root     root            22 Jun 26  2020 hello.js</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>-rw-r--r--    1 root     root           151 Jul  5  2020 readme.txt</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>localhost:~# echo &#39;new file&#39; &gt; new_file.txt</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>localhost:~# cat new_file.txt</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>new file</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>localhost:~# mkdir new_dir</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>localhost:~# cp new_file.txt new_dir/</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>localhost:~# rm new_file.txt</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>localhost:~# ls -l</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>total 20</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>-rw-r--r--    1 root     root           114 Jul  5  2020 bench.py</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>-rw-r--r--    1 root     root            76 Jul  3  2020 hello.c</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>-rw-r--r--    1 root     root            22 Jun 26  2020 hello.js</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>drwxr-xr-x    2 root     root            66 Nov  4 17:16 new_dir</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>-rw-r--r--    1 root     root           151 Jul  5  2020 readme.txt</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>localhost:~# ls -l new_dir/</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>total 4</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>-rw-r--r--    1 root     root             9 Nov  4 17:16 new_file.txt</span></code></pre></div>
 <p>Обратите внимание на использование в приведенном сеансе команд, упрощенное описание которых дано ниже:</p>
 <ul>
 <li><code>pwd</code>. Вывести имя текущего каталога.</li>
@@ -460,155 +459,155 @@ total 4
 </ul>
 <p>Многие команды имеют ряд аргументов, это, в частности, касается <code>ls</code>, которая выше была вызвана с аргументом <code>-l</code>. Аргументы разделяются пробелами и имеют префикс <code>-</code>.</p>
 <p>Узнать об аргументах, которые принимает команда, можно с помощью аргумента <code>--help</code>:</p>
-<pre><code>localhost:~# ls --help
-BusyBox v1.31.1 () multi-call binary.
- 
-Usage: ls [-1AaCxdLHRFplinshrSXvctu] [-w WIDTH] [FILE]...
- 
-List directory contents
- 
-        -1      One column output
-        -a      Include entries which start with .
-        -A      Like -a, but exclude . and ..
-        -x      List by lines
-        -d      List directory entries instead of contents
-        -L      Follow symlinks
-        -H      Follow symlinks on command line
-        -R      Recurse
-        -p      Append / to dir entries
-        -F      Append indicator (one of */=@|) to entries
-        -l      Long listing format
-        -i      List inode numbers
-        -n      List numeric UIDs and GIDs instead of names
-        -s      List allocated blocks
-        -lc     List ctime
-        -lu     List atime
-        --full-time     List full date and time
-        -h      Human readable sizes (1K 243M 2G)
-        --group-directories-first
-        -S      Sort by size
-        -X      Sort by extension
-        -v      Sort by version
-        -t      Sort by mtime
-        -tc     Sort by ctime
-        -tu     Sort by atime
-        -r      Reverse sort order
-        -w N    Format N columns wide
-        --color[={always,never,auto}]   Control coloring</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>localhost:~# ls --help</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>BusyBox v1.31.1 () multi-call binary.</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>Usage: ls [-1AaCxdLHRFplinshrSXvctu] [-w WIDTH] [FILE]...</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>List directory contents</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        -1      One column output</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        -a      Include entries which start with .</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        -A      Like -a, but exclude . and ..</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        -x      List by lines</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        -d      List directory entries instead of contents</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>        -L      Follow symlinks</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>        -H      Follow symlinks on command line</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>        -R      Recurse</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>        -p      Append / to dir entries</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>        -F      Append indicator (one of */=@|) to entries</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>        -l      Long listing format</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>        -i      List inode numbers</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>        -n      List numeric UIDs and GIDs instead of names</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>        -s      List allocated blocks</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>        -lc     List ctime</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>        -lu     List atime</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>        --full-time     List full date and time</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>        -h      Human readable sizes (1K 243M 2G)</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>        --group-directories-first</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>        -S      Sort by size</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>        -X      Sort by extension</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>        -v      Sort by version</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>        -t      Sort by mtime</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>        -tc     Sort by ctime</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>        -tu     Sort by atime</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>        -r      Reverse sort order</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>        -w N    Format N columns wide</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>        --color[={always,never,auto}]   Control coloring</span></code></pre></div>
 <p>Еще одним способом получить подробные сведения о конкретной команде является вызов вида <code>man &lt;команда&gt;</code>.</p>
 <p>Без объяснений осталась строка <code>echo &#39;new file&#39; &gt; new_file.txt</code> в примере сеанса работы в командной строке выше. Здесь используется механизм перенаправления данных с помощью символов <code>&lt;</code> (перенаправление ввода) и <code>&gt;</code> (перенаправление вывода). В Linux имеется источник стандартного ввода stdin (код 0), а также два приемника стандартного вывода: stdout (код 1) и stderr (код 2, для ошибок). Организация ввода/вывода показана на рис. 6.</p>
 <figure>
 <img src="data:image/png;base64,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" id="fig:cli2" alt="Рис. 6. Организация ввода/вывода" /><figcaption aria-hidden="true">Рис. 6. Организация ввода/вывода</figcaption>
 </figure>
 <p>В примере ниже используется stdout и stderr:</p>
-<pre><code>localhost:~# pwd
-/root
-localhost:~# pwd &gt; pwd.txt
-localhost:~# pwd --foo
-sh: pwd: illegal option --
-localhost:~# pwd --foo 2&gt; err.txt
-localhost:~# cat err.txt
-sh: pwd: illegal option --</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>localhost:~# pwd</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>/root</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>localhost:~# pwd &gt; pwd.txt</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>localhost:~# pwd --foo</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>sh: pwd: illegal option --</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>localhost:~# pwd --foo 2&gt; err.txt</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>localhost:~# cat err.txt</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>sh: pwd: illegal option --</span></code></pre></div>
 <p>Обратите внимание на явное указание кода 2 при сохранении сообщения об ошибке в файл.</p>
 <p>Перенаправление ввода/вывода превращается в очень мощную конструкцию при использовании такой организации команд, при которой вывод одной команды попадает на вход другой команды. Эта конструкция представляет собой конвейер и реализуется с помощью символа <code>|</code>, как показано в примере далее:</p>
-<pre><code>localhost:~# pwd &gt; pwd.txt
-localhost:~# rev --help
-Usage: rev [options] [file ...]
- 
-Reverse lines characterwise.
- 
-Options:
- -h, --help     display this help
- -V, --version  display version
- 
-For more details see rev(1).
-localhost:~# rev pwd.txt
-toor/
-localhost:~# pwd | rev
-toor/</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>localhost:~# pwd &gt; pwd.txt</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>localhost:~# rev --help</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>Usage: rev [options] [file ...]</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>Reverse lines characterwise.</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>Options:</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a> -h, --help     display this help</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a> -V, --version  display version</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>For more details see rev(1).</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>localhost:~# rev pwd.txt</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>toor/</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>localhost:~# pwd | rev</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>toor/</span></code></pre></div>
 <p>В Bash имеется удобный синтаксис для развертывания файловых путей (globbing). С помощью символов <code>*</code> (произвольная последовательность) и <code>?</code> (произвольный символ) реализуется подстановка имен файлов в духе регулярных выражений, как в примере ниже:</p>
-<pre><code>localhost:~# echo *
-bench.py err.txt hello.c hello.js new_dir pwd.txt readme.txt rev
-localhost:~# echo *.c
-hello.c
-localhost:~# echo p*
-pwd.txt
-localhost:~# echo *.??
-bench.py hello.js</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>localhost:~# echo *</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>bench.py err.txt hello.c hello.js new_dir pwd.txt readme.txt rev</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>localhost:~# echo *.c</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>hello.c</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>localhost:~# echo p*</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>pwd.txt</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>localhost:~# echo *.??</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>bench.py hello.js</span></code></pre></div>
 <p>В Bash есть возможность задать переменные и, кроме того, имеется ряд уже определенных переменных. Обратите внимание на особенности создания переменных:</p>
-<pre><code>localhost:~# A = 42
-sh: A: not found
-localhost:~# A=42
-localhost:~# A
-sh: A: not found
-localhost:~# echo $A
-42</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>localhost:~# A = 42</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>sh: A: not found</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>localhost:~# A=42</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>localhost:~# A</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>sh: A: not found</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>localhost:~# echo $A</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>42</span></code></pre></div>
 <p>С помощью команды <code>set</code> можно, помимо прочего, узнать, какие переменные сейчас заданы для текущего пользователя:</p>
-<pre><code>localhost:~# set
-A=&#39;42&#39;
-HISTFILE=&#39;/root/.ash_history&#39;
-HOME=&#39;/root&#39;
-HOSTNAME=&#39;localhost&#39;
-IFS=&#39;
-&#39;
-LINENO=&#39;&#39;
-OLDPWD=&#39;/&#39;
-OPTIND=&#39;1&#39;
-PAGER=&#39;less&#39;
-PATH=&#39;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&#39;
-PPID=&#39;1&#39;
-PS1=&#39;\h:\w\$ &#39;
-PS2=&#39;&gt; &#39;
-PS4=&#39;+ &#39;
-PWD=&#39;/root&#39;
-SHLVL=&#39;3&#39;
-TERM=&#39;linux&#39;
-TZ=&#39;UTC-03:00&#39;
-_=&#39;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&#39;
-script=&#39;/etc/profile.d/*.sh&#39;</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>localhost:~# set</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>A=&#39;42&#39;</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>HISTFILE=&#39;/root/.ash_history&#39;</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>HOME=&#39;/root&#39;</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>HOSTNAME=&#39;localhost&#39;</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>IFS=&#39;</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>&#39;</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>LINENO=&#39;&#39;</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>OLDPWD=&#39;/&#39;</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>OPTIND=&#39;1&#39;</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>PAGER=&#39;less&#39;</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>PATH=&#39;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&#39;</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>PPID=&#39;1&#39;</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>PS1=&#39;\h:\w\$ &#39;</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>PS2=&#39;&gt; &#39;</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>PS4=&#39;+ &#39;</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>PWD=&#39;/root&#39;</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>SHLVL=&#39;3&#39;</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>TERM=&#39;linux&#39;</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>TZ=&#39;UTC-03:00&#39;</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>_=&#39;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&#39;</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>script=&#39;/etc/profile.d/*.sh&#39;</span></code></pre></div>
 <p>Особенно важна здесь переменная PATH, которая определяет те пути (разделенные с помощью <code>:</code>), где будет осуществляться поиск команд интерпретатором.</p>
 <p>Linux является многопользовательской ОС и информация о зарегистрированных пользователях находится в конфигурационном файле <code>/etc/passwd</code>:</p>
-<pre><code>localhost:~# whoami
-root
-localhost:~# cat /etc/passwd
-root:x:0:0:root:/root:/bin/ash
-bin:x:1:1:bin:/bin:/sbin/nologin
-daemon:x:2:2:daemon:/sbin:/sbin/nologin
-adm:x:3:4:adm:/var/adm:/sbin/nologin
-lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
-sync:x:5:0:sync:/sbin:/bin/sync
-shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
-halt:x:7:0:halt:/sbin:/sbin/halt
-mail:x:8:12:mail:/var/mail:/sbin/nologin
-news:x:9:13:news:/usr/lib/news:/sbin/nologin
-uucp:x:10:14:uucp:/var/spool/uucppublic:/sbin/nologin
-operator:x:11:0:operator:/root:/sbin/nologin
-man:x:13:15:man:/usr/man:/sbin/nologin
-postmaster:x:14:12:postmaster:/var/mail:/sbin/nologin
-cron:x:16:16:cron:/var/spool/cron:/sbin/nologin
-ftp:x:21:21::/var/lib/ftp:/sbin/nologin
-sshd:x:22:22:sshd:/dev/null:/sbin/nologin
-at:x:25:25:at:/var/spool/cron/atjobs:/sbin/nologin
-squid:x:31:31:Squid:/var/cache/squid:/sbin/nologin
-xfs:x:33:33:X Font Server:/etc/X11/fs:/sbin/nologin
-games:x:35:35:games:/usr/games:/sbin/nologin
-cyrus:x:85:12::/usr/cyrus:/sbin/nologin
-vpopmail:x:89:89::/var/vpopmail:/sbin/nologin
-ntp:x:123:123:NTP:/var/empty:/sbin/nologin
-smmsp:x:209:209:smmsp:/var/spool/mqueue:/sbin/nologin
-guest:x:405:100:guest:/dev/null:/sbin/nologin
-nobody:x:65534:65534:nobody:/:/sbin/nologin
-dhcp:x:100:101:dhcp:/var/lib/dhcp:/sbin/nologin
-svn:x:101:102:svn:/var/svn:/sbin/nologin</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>localhost:~# whoami</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>root</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>localhost:~# cat /etc/passwd</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>root:x:0:0:root:/root:/bin/ash</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>bin:x:1:1:bin:/bin:/sbin/nologin</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>daemon:x:2:2:daemon:/sbin:/sbin/nologin</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>adm:x:3:4:adm:/var/adm:/sbin/nologin</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>sync:x:5:0:sync:/sbin:/bin/sync</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>halt:x:7:0:halt:/sbin:/sbin/halt</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>mail:x:8:12:mail:/var/mail:/sbin/nologin</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>news:x:9:13:news:/usr/lib/news:/sbin/nologin</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>uucp:x:10:14:uucp:/var/spool/uucppublic:/sbin/nologin</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>operator:x:11:0:operator:/root:/sbin/nologin</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>man:x:13:15:man:/usr/man:/sbin/nologin</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>postmaster:x:14:12:postmaster:/var/mail:/sbin/nologin</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>cron:x:16:16:cron:/var/spool/cron:/sbin/nologin</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>ftp:x:21:21::/var/lib/ftp:/sbin/nologin</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>sshd:x:22:22:sshd:/dev/null:/sbin/nologin</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>at:x:25:25:at:/var/spool/cron/atjobs:/sbin/nologin</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>squid:x:31:31:Squid:/var/cache/squid:/sbin/nologin</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>xfs:x:33:33:X Font Server:/etc/X11/fs:/sbin/nologin</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>games:x:35:35:games:/usr/games:/sbin/nologin</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>cyrus:x:85:12::/usr/cyrus:/sbin/nologin</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>vpopmail:x:89:89::/var/vpopmail:/sbin/nologin</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>ntp:x:123:123:NTP:/var/empty:/sbin/nologin</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>smmsp:x:209:209:smmsp:/var/spool/mqueue:/sbin/nologin</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>guest:x:405:100:guest:/dev/null:/sbin/nologin</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>nobody:x:65534:65534:nobody:/:/sbin/nologin</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>dhcp:x:100:101:dhcp:/var/lib/dhcp:/sbin/nologin</span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>svn:x:101:102:svn:/var/svn:/sbin/nologin</span></code></pre></div>
 <p>Информация о каждом из пользователей занимает отдельную строку. Строка разделяется символом <code>:</code> на поля. Первое поле означает имя пользователя. В нашем случае это root. Последнее поле указывает путь к интерпретатору оболочки ОС. В нашем случае это компактный Bash-подобный интерпретатор ash.</p>
 <p>Вспомним, как выглядит вывод команды <code>ls</code> в long-формате:</p>
-<pre><code>localhost:~# ls -l
-total 20
--rw-r--r--    1 root     root           114 Jul  5  2020 bench.py
-drwxr-xr-x    2 root     root            37 Nov  4 18:01 foo
--rw-r--r--    1 root     root            76 Jul  3  2020 hello.c
--rw-r--r--    1 root     root            22 Jun 26  2020 hello.js
--rw-r--r--    1 root     root           151 Jul  5  2020 readme.txt</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>localhost:~# ls -l</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>total 20</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>-rw-r--r--    1 root     root           114 Jul  5  2020 bench.py</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>drwxr-xr-x    2 root     root            37 Nov  4 18:01 foo</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>-rw-r--r--    1 root     root            76 Jul  3  2020 hello.c</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>-rw-r--r--    1 root     root            22 Jun 26  2020 hello.js</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>-rw-r--r--    1 root     root           151 Jul  5  2020 readme.txt</span></code></pre></div>
 <p>Первый столбец определяет права доступа и информацию о файле (<code>-</code>) или каталоге (<code>d</code>, как в случае с foo), закодированную в первом символе. Флаги доступа бывают следующих основных видов:</p>
 <ul>
 <li><code>-</code>. Доступ запрещен.</li>
@@ -617,31 +616,31 @@ drwxr-xr-x    2 root     root            37 Nov  4 18:01 foo
 <li><code>x</code>. Имеется доступ на исполнение (на вход в случае каталога).</li>
 </ul>
 <p>Рассмотрим детали на примере с файлом bench.py, который имеет следующие права доступа:</p>
-<pre><code>-rw-r--r--  1  root    root           114 Jul  5  2020 bench.py
-|[-][-][-]   [------] [---]
-| |  |  |       |       |
-| |  |  |       |       +------------&gt; 6. Группа
-| |  |  |       +--------------------&gt; 5. Владелец
-| |  |  | 
-| |  |  +----------------------------&gt; 4. Права всех остальных
-| |  +-------------------------------&gt; 3. Права группы
-| +----------------------------------&gt; 2. Права владельца
-+------------------------------------&gt; 1. Тип файла</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>-rw-r--r--  1  root    root           114 Jul  5  2020 bench.py</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>|[-][-][-]   [------] [---]</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>| |  |  |       |       |</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>| |  |  |       |       +------------&gt; 6. Группа</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>| |  |  |       +--------------------&gt; 5. Владелец</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>| |  |  | </span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>| |  |  +----------------------------&gt; 4. Права всех остальных</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>| |  +-------------------------------&gt; 3. Права группы</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>| +----------------------------------&gt; 2. Права владельца</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>+------------------------------------&gt; 1. Тип файла</span></code></pre></div>
 <p>При создании пользовательских команд необходимо указать права на исполнение, как показано в примере ниже:</p>
-<pre><code>localhost:~# echo &quot;ls -l&quot; &gt; lsl
-localhost:~# lsl
-sh: lsl: not found
-localhost:~# ./lsl
-sh: ./lsl: Permission denied
-localhost:~# chmod +x lsl
-localhost:~# ./lsl
-total 24
--rw-r--r--    1 root     root           114 Jul  5  2020 bench.py
-drwxr-xr-x    2 root     root            37 Nov  4 18:01 foo
--rw-r--r--    1 root     root            76 Jul  3  2020 hello.c
--rw-r--r--    1 root     root            22 Jun 26  2020 hello.js
--rwxr-xr-x    1 root     root             6 Nov  4 18:44 lsl
--rw-r--r--    1 root     root           151 Jul  5  2020 readme.txt</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>localhost:~# echo &quot;ls -l&quot; &gt; lsl</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>localhost:~# lsl</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>sh: lsl: not found</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>localhost:~# ./lsl</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>sh: ./lsl: Permission denied</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>localhost:~# chmod +x lsl</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>localhost:~# ./lsl</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>total 24</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>-rw-r--r--    1 root     root           114 Jul  5  2020 bench.py</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>drwxr-xr-x    2 root     root            37 Nov  4 18:01 foo</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>-rw-r--r--    1 root     root            76 Jul  3  2020 hello.c</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>-rw-r--r--    1 root     root            22 Jun 26  2020 hello.js</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>-rwxr-xr-x    1 root     root             6 Nov  4 18:44 lsl</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>-rw-r--r--    1 root     root           151 Jul  5  2020 readme.txt</span></code></pre></div>
 <p>В Bash существует ряд специальных переменных, в частности:</p>
 <ul>
 <li><code>$0</code>. Путь к запущенной программе.</li>
@@ -651,62 +650,62 @@ drwxr-xr-x    2 root     root            37 Nov  4 18:01 foo
 <li><code>$?</code>. Значение результата выполнения программы (0 означает успешное выполнение).</li>
 </ul>
 <p>Рассморим в качестве примера следующую программу tests.sh:</p>
-<pre><code>echo $0
-echo $1 $2
-echo $#
-echo $@</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>echo $0</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>echo $1 $2</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>echo $#</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>echo $@</span></code></pre></div>
 <p>Результат ее выполнения показан далее:</p>
-<pre><code>localhost:~# ./test.sh 1 2 3 4 5
-./test.sh
-1 2
-5
-1 2 3 4 5
-localhost:~# echo $?
-0
-localhost:~# foo
-sh: foo: not found
-localhost:~# echo $?
-127</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>localhost:~# ./test.sh 1 2 3 4 5</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>./test.sh</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>1 2</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>5</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>1 2 3 4 5</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>localhost:~# echo $?</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>0</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>localhost:~# foo</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>sh: foo: not found</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>localhost:~# echo $?</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>127</span></code></pre></div>
 <p>Рассморим теперь более сложный пример пользовательской команды. Далее приведен код на языке Bash вычисления факториала:</p>
-<pre><code>#!/bin/sh
-seq &quot;$1&quot; | xargs echo | tr &quot; &quot; &quot;*&quot; | bc</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>#!/bin/sh</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>seq &quot;$1&quot; | xargs echo | tr &quot; &quot; &quot;*&quot; | bc</span></code></pre></div>
 <p>В первой строке указан интерпретатор, который будет использоваться для исполнения программы. По соглашению, такую строку необходимо всегда указывать первой в пользовательских скриптах. Далее используется ряд новых команд.</p>
 <p>Команда <code>seq</code> генерирует последовательность чисел:</p>
-<pre><code>localhost:~# seq 5
-1
-2
-3
-4
-5</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>localhost:~# seq 5</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>1</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>2</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>3</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>4</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>5</span></code></pre></div>
 <p>Команда <code>xargs</code> форматирует список из стандартного ввода:</p>
-<pre><code>localhost:~# seq 5 | xargs
-1 2 3 4 5</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>localhost:~# seq 5 | xargs</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>1 2 3 4 5</span></code></pre></div>
 <p>Команда <code>tr</code> осуществляет замену текстовых фрагментов:</p>
-<pre><code>localhost:~# seq 5 | xargs | tr &quot; &quot; &quot;*&quot;
-1*2*3*4*5</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>localhost:~# seq 5 | xargs | tr &quot; &quot; &quot;*&quot;</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>1*2*3*4*5</span></code></pre></div>
 <p>Команда bc представляет собой калькулятор:</p>
-<pre><code>localhost:~# echo &quot;2+2&quot; | bc
-4</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>localhost:~# echo &quot;2+2&quot; | bc</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>4</span></code></pre></div>
 <p>Для вычислений в Bash можно также использовать скобки специального вида:</p>
-<pre><code>localhost:~# echo $((2 + 2))
-4</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>localhost:~# echo $((2 + 2))</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>4</span></code></pre></div>
 <p>Для получения результата команды в виде аргумента другой команды можно также использовать скобки специального вида:</p>
-<pre><code>localhost:~# echo &quot;My folder is $(pwd)&quot;
-My folder is /root</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>localhost:~# echo &quot;My folder is $(pwd)&quot;</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>My folder is /root</span></code></pre></div>
 <p>В Bash имеются возможности полноценного языка программирования. Ниже приведен пример реализации факториала с использованием ветвлений и рекурсии:</p>
-<pre><code>#!/bin/sh
-if [ &quot;$1&quot; -le 1 ] ; then
-        echo 1
-        return
-fi
-echo $(( $1 * $( ./fact.sh $(( $1 - 1 )) ) ))</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>#!/bin/sh</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>if [ &quot;$1&quot; -le 1 ] ; then</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>        echo 1</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>        return</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>fi</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>echo $(( $1 * $( ./fact.sh $(( $1 - 1 )) ) ))</span></code></pre></div>
 <p>Реализация факториала с использованием цикла:</p>
-<pre><code>#!/bin/sh
-res=1
-for i in $(seq 1 &quot;$1&quot;); do
-        res=$((res * i))
-done
-echo $res</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>#!/bin/sh</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>res=1</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>for i in $(seq 1 &quot;$1&quot;); do</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>        res=$((res * i))</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>done</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>echo $res</span></code></pre></div>
 <h2 data-number="2.2" id="инструменты-grep-sed-и-awk"><span class="header-section-number">2.2</span> Инструменты grep, sed и awk</h2>
 <p>Команда grep осуществляет поиск по образцу, определяемому регулярным выражением. Команда sed является строчным редактром, но главное ее использование состоит в замене по шаблону, как и в случае grep, заданному регулярным выражением.</p>
 <p>В табл. 1 показаны примеры некоторых базовых элементов регулярного выражения.</p>
@@ -760,50 +759,49 @@ echo $res</code></pre>
 </table>
 </div>
 <p>С использованием grep и sed можно создать достаточно сложные схемы обработки данных. В частности, следующий код осуществляет проверку правописания для файла README.md на основе словаря из файла unix-words:</p>
-<pre><code>cat README.md | tr A-Z a-z | tr -cs A-Za-z &#39;\n&#39; | sort | uniq | grep -vx -f unix-words &gt;out ; cat out | wc -l | sed &#39;s/$/ mispelled words!/&#39;</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>cat README.md | tr A-Z a-z | tr -cs A-Za-z &#39;\n&#39; | sort | uniq | grep -vx -f unix-words &gt;out ; cat out | wc -l | sed &#39;s/$/ mispelled words!/&#39;</span></code></pre></div>
 <p>Еще более изощренным, чем grep и sed, является инструмент awk. Awk (по именам авторов — Aho, Weinberger, Kernighan) представляет собой язык программирования для обработки текстовых данных.</p>
 <p>Ниже показан пример вывода колонки №5 из данных, предоставленных вызовом <code>ls -l</code>:</p>
-<pre><code>localhost:~# ls -l
-total 36
--rw-r--r--    1 root     root           114 Jul  5  2020 bench.py
--rwxr-xr-x    1 root     root            51 Nov  4 18:56 fact.sh
--rwxr-xr-x    1 root     root            76 Nov  4 19:45 fact2.sh
-drwxr-xr-x    2 root     root            37 Nov  4 18:01 foo
--rw-r--r--    1 root     root            76 Jul  3  2020 hello.c
--rw-r--r--    1 root     root            22 Jun 26  2020 hello.js
--rwxr-xr-x    1 root     root             6 Nov  4 18:44 lsl
--rw-r--r--    1 root     root           151 Jul  5  2020 readme.txt
--rwxr-xr-x    1 root     root            36 Nov  4 18:50 test.sh
-localhost:~# ls -l | awk &#39;{ print $5 }&#39;
- 
-114
-51
-76
-37
-76
-22
-6
-151
-36</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>localhost:~# ls -l</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>total 36</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>-rw-r--r--    1 root     root           114 Jul  5  2020 bench.py</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>-rwxr-xr-x    1 root     root            51 Nov  4 18:56 fact.sh</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>-rwxr-xr-x    1 root     root            76 Nov  4 19:45 fact2.sh</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>drwxr-xr-x    2 root     root            37 Nov  4 18:01 foo</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>-rw-r--r--    1 root     root            76 Jul  3  2020 hello.c</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>-rw-r--r--    1 root     root            22 Jun 26  2020 hello.js</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>-rwxr-xr-x    1 root     root             6 Nov  4 18:44 lsl</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>-rw-r--r--    1 root     root           151 Jul  5  2020 readme.txt</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>-rwxr-xr-x    1 root     root            36 Nov  4 18:50 test.sh</span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>localhost:~# ls -l | awk &#39;{ print $5 }&#39;</span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>114</span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>51</span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>76</span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a>37</span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a>76</span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a>22</span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>6</span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a>151</span>
+<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a>36</span></code></pre></div>
 <p>Средствами awk легко подсчитать общий размер файлов:</p>
-<pre><code>localhost:~# ls -l | awk &#39;{ s += $5 } END { print s }&#39;
-569</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>localhost:~# ls -l | awk &#39;{ s += $5 } END { print s }&#39;</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>569</span></code></pre></div>
 <p>В заключение рассмотрим пример вывода на экран самой свежей новости с ресурса Hacker News:</p>
-<pre><code>#!/bin/sh
-N=$(curl -s https://hacker-news.firebaseio.com/v0/topstories.json | jq &#39;.[0]&#39;)
-curl -s &quot;https://hacker-news.firebaseio.com/v0/item/$N.json&quot; | jq &#39;.[&quot;title&quot;]&#39; | cowsay</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>#!/bin/sh</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>N=$(curl -s https://hacker-news.firebaseio.com/v0/topstories.json | jq &#39;.[0]&#39;)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>curl -s &quot;https://hacker-news.firebaseio.com/v0/item/$N.json&quot; | jq &#39;.[&quot;title&quot;]&#39; | cowsay</span></code></pre></div>
 <p>Вот как выглядит вывод этой программы:</p>
-<pre><code>root@Server584432:~# ./hn.sh
- ________________________________________
-/ &quot;Finishing my first game while working \
-\ full-time&quot;                             /
- ----------------------------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>root@Server584432:~# ./hn.sh</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a> ________________________________________</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>/ &quot;Finishing my first game while working \</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>\ full-time&quot;                             /</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a> ----------------------------------------</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>        \   ^__^</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>         \  (oo)\_______</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>            (__)\       )\/\</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>                ||----w |</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>                ||     ||</span></code></pre></div>
 <h1 data-number="3" id="менеджеры-пакетов"><span class="header-section-number">3</span> Менеджеры пакетов</h1>
 <h2 data-number="3.1" id="нумерация-версий-по"><span class="header-section-number">3.1</span> Нумерация версий ПО</h2>
 <p><strong>Программная библиотека</strong> — контролируемая коллекция программных приложений и связанной с ними документации, предназначенная для использования в процессе разработки, эксплуатации и сопровождения программного обеспечения.</p>
@@ -1406,7 +1404,7 @@ function dfs(u):
 <p>Для работы большинства операций в Git достаточно локальных файлов и ресурсов — в основном, системе не нужна никакая информация с других компьютеров в вашей сети. Так как вся история проекта хранится прямо на локальном диске, большинство операций кажутся чуть ли не мгновенными.</p>
 <p>В Git для всего вычисляется хеш-сумма, и только потом происходит сохранение. В дальнейшем обращение к сохраненным объектам происходит по этой хеш-сумме. Это значит, что невозможно изменить содержимое файла или директории так, чтобы Git не узнал об этом. Данная функциональность встроена в Git на низком уровне и является неотъемлемой частью его философии. Вы не потеряете информацию во время её передачи и не получите повреждённый файл без ведома Git.</p>
 <p>Механизм, которым пользуется Git при вычислении хеш-сумм, называется SHA-1 хеш. Это строка длинной в 40 шестнадцатеричных символов (0-9 и a-f), она вычисляется на основе содержимого файла или структуры каталога. SHA-1 хеш выглядит примерно так:</p>
-<pre><code>24b9da6552252987aa493b52f8696cd6d3b00373</code></pre>
+<div class="sourceCode" id="cb51"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>24b9da6552252987aa493b52f8696cd6d3b00373</span></code></pre></div>
 <p>Вы будете постоянно встречать хеши в Git, потому что он использует их повсеместно. На самом деле, Git сохраняет все объекты в свою базу данных не по имени, а по хеш-сумме содержимого объекта.</p>
 <p>Когда вы производите какие-либо действия в Git, практически все из них только добавляют новые данные в базу Git. Очень сложно заставить систему удалить данные либо сделать что-то, что нельзя впоследствии отменить. Как и в любой другой СКВ, вы можете потерять или испортить свои изменения, пока они не зафиксированы, но после того, как вы зафиксируете снимок в Git, будет очень сложно что-либо потерять, особенно, если вы регулярно синхронизируете свою базу с другим репозиторием.</p>
 <p>У Git есть три основных состояния, в которых могут находиться ваши файлы: зафиксированное (committed), изменённое (modified) и подготовленное (staged).</p>
@@ -1435,81 +1433,81 @@ function dfs(u):
 <p><strong>Снимки</strong>. Git моделирует историю файлов и каталогов в некотором каталоге верхнего уровня как серию снимков. В терминологии Git файл называется «blob» (Binary Large Object), это просто набор байтов. Каталог называется «деревом», и он сопоставляет имена с blobs или деревьями (то есть каталоги могут содержать в себе другие каталоги).</p>
 <p>Снимок - это отслеживаемое СКВ дерево.</p>
 <p>Пример дерева:</p>
-<pre><code>&lt;root&gt; (tree)
-|
-+- foo (tree)
-|  |
-|  + bar.txt (blob, contents = &quot;hello world&quot;)
-|
-+- baz.txt (blob, contents = &quot;git is wonderful&quot;)</code></pre>
+<div class="sourceCode" id="cb52"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>&lt;root&gt; (tree)</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>|</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>+- foo (tree)</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>|  |</span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>|  + bar.txt (blob, contents = &quot;hello world&quot;)</span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>|</span>
+<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>+- baz.txt (blob, contents = &quot;git is wonderful&quot;)</span></code></pre></div>
 <p>Модель истории. В Git <strong>история</strong> - это ориентированный ациклический граф снимков. В псевдокоде:</p>
-<pre><code>// файл — последовательность байт
-type blob = array&lt;byte&gt;
- 
-// директория содержит именованные файлы или директории
-type tree = map&lt;string, tree | blob&gt;
- 
-// коммит содержит родителей, метаданные и дерево 
-type commit = struct {
-    parent: array&lt;commit&gt;
-    author: string
-    message: string
-    snapshot: tree
-}</code></pre>
+<div class="sourceCode" id="cb53"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>// файл — последовательность байт</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>type blob = array&lt;byte&gt;</span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>// директория содержит именованные файлы или директории</span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>type tree = map&lt;string, tree | blob&gt;</span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>// коммит содержит родителей, метаданные и дерево </span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>type commit = struct {</span>
+<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a>    parent: array&lt;commit&gt;</span>
+<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a>    author: string</span>
+<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a>    message: string</span>
+<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a>    snapshot: tree</span>
+<span id="cb53-13"><a href="#cb53-13" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p><strong>Объекты</strong>. Объект это blob, дерево или коммит. Объекты адресуются по своим хеш-значениям SHA-1.</p>
-<pre><code>type object = blob | tree | commit
- 
-objects = map&lt;string, object&gt;
- 
-def store(object):
-    id = sha1(object)
-    objects[id] = object
- 
-def load(id):
-    return objects[id]</code></pre>
+<div class="sourceCode" id="cb54"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>type object = blob | tree | commit</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>objects = map&lt;string, object&gt;</span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>def store(object):</span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>    id = sha1(object)</span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a>    objects[id] = object</span>
+<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a>def load(id):</span>
+<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a>    return objects[id]</span></code></pre></div>
 <p><strong>Ссылки</strong>. Ссылки указывают на объекты.</p>
-<pre><code>references = map&lt;string, string&gt;
- 
-def update_reference(name, id):
-    references[name] = id
- 
-def read_reference(name):
-    return references[name]
- 
-def load_reference(name_or_id):
-    if name_or_id in references:
-        return load(references[name_or_id])
-    else:
-        return load(name_or_id)</code></pre>
+<div class="sourceCode" id="cb55"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>references = map&lt;string, string&gt;</span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>def update_reference(name, id):</span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>    references[name] = id</span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a>def read_reference(name):</span>
+<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a>    return references[name]</span>
+<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb55-9"><a href="#cb55-9" aria-hidden="true" tabindex="-1"></a>def load_reference(name_or_id):</span>
+<span id="cb55-10"><a href="#cb55-10" aria-hidden="true" tabindex="-1"></a>    if name_or_id in references:</span>
+<span id="cb55-11"><a href="#cb55-11" aria-hidden="true" tabindex="-1"></a>        return load(references[name_or_id])</span>
+<span id="cb55-12"><a href="#cb55-12" aria-hidden="true" tabindex="-1"></a>    else:</span>
+<span id="cb55-13"><a href="#cb55-13" aria-hidden="true" tabindex="-1"></a>        return load(name_or_id)</span></code></pre></div>
 <p>Управление git удобнее всего осуществлять из командной строки. Ниже представлены некоторые команды git:</p>
 <p>Базовые команды</p>
-<pre><code>git help &lt;command&gt;: помощь по git
-git init: инициализация нового репозитория
-git status: текущий статус репозитория
-git add &lt;filename&gt;: добавить файл в подготовительную область
-git commit: создать новый коммит
-git log: показать историю изменений
-git log --all --graph --decorate: история, как граф
-git diff &lt;filename&gt;: изменения по сравнению с состоянием в подготовительной области
-git diff &lt;revision&gt; &lt;filename&gt;: изменения в разных снимках для файла
-git checkout &lt;revision&gt;: обновление HEAD и текущей ветки</code></pre>
+<div class="sourceCode" id="cb56"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>git help &lt;command&gt;: помощь по git</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>git init: инициализация нового репозитория</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>git status: текущий статус репозитория</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>git add &lt;filename&gt;: добавить файл в подготовительную область</span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>git commit: создать новый коммит</span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>git log: показать историю изменений</span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a>git log --all --graph --decorate: история, как граф</span>
+<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a>git diff &lt;filename&gt;: изменения по сравнению с состоянием в подготовительной области</span>
+<span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a>git diff &lt;revision&gt; &lt;filename&gt;: изменения в разных снимках для файла</span>
+<span id="cb56-10"><a href="#cb56-10" aria-hidden="true" tabindex="-1"></a>git checkout &lt;revision&gt;: обновление HEAD и текущей ветки</span></code></pre></div>
 <p>Ветки и слияние</p>
-<pre><code>git branch: показать ветки
-git branch &lt;name&gt;: создать ветку
-git checkout -b &lt;name&gt;: создать ветку и переключиться на нее
-то же, что и git branch &lt;name&gt;; git checkout &lt;name&gt;
-git merge &lt;revision&gt;: слияние в текущую ветку</code></pre>
+<div class="sourceCode" id="cb57"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>git branch: показать ветки</span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>git branch &lt;name&gt;: создать ветку</span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>git checkout -b &lt;name&gt;: создать ветку и переключиться на нее</span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>то же, что и git branch &lt;name&gt;; git checkout &lt;name&gt;</span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>git merge &lt;revision&gt;: слияние в текущую ветку</span></code></pre></div>
 <p>Удаленная работа</p>
-<pre><code>git remote: список удаленных репозиториев
-git remote add &lt;name&gt; &lt;url&gt;: добавить удаленный репозиторий
-git push &lt;remote&gt; &lt;local branch&gt;:&lt;remote branch&gt;: отправить данные для изменения в удаленном репозитории
-git branch --set-upstream-to=&lt;remote&gt;/&lt;remote branch&gt;: установить взаимосвязь между локальной и удаленной ветками
-git fetch: получить данные из удаленного репозитория
-git pull: то же, что и git fetch; git merge
-git clone: загрузить удаленный репозиторий</code></pre>
+<div class="sourceCode" id="cb58"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>git remote: список удаленных репозиториев</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>git remote add &lt;name&gt; &lt;url&gt;: добавить удаленный репозиторий</span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>git push &lt;remote&gt; &lt;local branch&gt;:&lt;remote branch&gt;: отправить данные для изменения в удаленном репозитории</span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>git branch --set-upstream-to=&lt;remote&gt;/&lt;remote branch&gt;: установить взаимосвязь между локальной и удаленной ветками</span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>git fetch: получить данные из удаленного репозитория</span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>git pull: то же, что и git fetch; git merge</span>
+<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>git clone: загрузить удаленный репозиторий</span></code></pre></div>
 <p>Отмена действий</p>
-<pre><code>git commit --amend: отредактировать содержимое коммита
-git reset HEAD &lt;file&gt;: отменить добавление файла</code></pre>
+<div class="sourceCode" id="cb59"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>git commit --amend: отредактировать содержимое коммита</span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>git reset HEAD &lt;file&gt;: отменить добавление файла</span></code></pre></div>
 <h1 data-number="7" id="генераторы-документации"><span class="header-section-number">7</span> Генераторы документации</h1>
 <p>Текст.</p>
 <h1 data-number="8" id="виртуализация-и-контейнеризация"><span class="header-section-number">8</span> Виртуализация и контейнеризация</h1>

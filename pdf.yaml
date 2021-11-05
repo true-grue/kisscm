@@ -11,7 +11,6 @@ header-includes: |
     \captionsetup[figure]{font={normalfont},format=plain,labelsep=period}
     \usepackage{fvextra}
     \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
-    \let\oldsection\section
     \usepackage{hyperref}
     \hypersetup{
         colorlinks=true,
