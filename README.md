@@ -27,15 +27,15 @@
 | Файл рисунка | Кто взял |
 |---|---|
 |cli1.png|TMentosT|
-|cli2.png|  |
-|vcs6.png|  |
-|make6.png|  |
+|cli2.png|HaidesAidoseus|
+|vcs6.png|HaidesAidoseus|
+|make6.png|HaidesAidoseus|
 |make5.png|TMentosT|
 |make4.png|TMentosT|
 |make3.png|TMentosT|
 |make2.png|TMentosT|
 |make1.png|TMentosT|
-|pm1.png|  |
+|pm1.png|HaidesAidoseus|
 
 Формирование HMTL
 

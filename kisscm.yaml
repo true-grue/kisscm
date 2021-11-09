@@ -6,8 +6,8 @@ metadata:
   figPrefix: рис.
   titleDelim: .
   tableTitle: Таблица
-  tblPrefix: табл.
+  tblPrefix: табл. 
+  numberSections: true
+  sectionsDepth: 3
+  secHeaderDelim: ". "
   toc-title: Оглавление
-  secnumdepth: 3
-
-
