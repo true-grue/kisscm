@@ -58,4 +58,5 @@
 ## Благодарности
 
 * [TMentosT](https://github.com/TMentosT)
+* [HaidesAidoseus](https://github.com/HaidesAidoseus)
   
