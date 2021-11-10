@@ -4,12 +4,13 @@
 
 Сборка проекта настроена для ОС Windows. Для редактирования используется [Visual Studio Code](https://code.visualstudio.com/download).
 
-* Установить [pandoc](https://pandoc.org/).
-* Установить плагин [pandoc-crossref](https://lierdakil.github.io/pandoc-crossref/).
-* Установить [make для Windows](http://gnuwin32.sourceforge.net/packages/make.htm).
-* Установить [Python 3](https://www.python.org/downloads/).
-* Установить [rsvg-convert](http://sourceforge.net/projects/tumagcc/files/rsvg-convert-2.40.20.7z/download).
-* Для PDF установить шрифты от [Paratype](http://rus.paratype.ru/pt-sans-pt-serif).
+1. Установить [pandoc](https://pandoc.org/).
+1. Установить [Tex Live](https://www.tug.org/texlive/acquire-netinstall.html) или [MikTeX](https://miktex.org/download).
+1. Установить плагин [pandoc-crossref](https://lierdakil.github.io/pandoc-crossref/).
+1. Установить [make для Windows](http://gnuwin32.sourceforge.net/packages/make.htm).
+1. Установить [Python 3](https://www.python.org/downloads/).
+1. Установить [rsvg-convert](http://sourceforge.net/projects/tumagcc/files/rsvg-convert-2.40.20.7z/download).
+1. Установить шрифты от [Paratype](http://rus.paratype.ru/pt-sans-pt-serif).
 
 ## Задачи
 
