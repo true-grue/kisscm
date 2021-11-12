@@ -1,12 +1,16 @@
 documentclass: extarticle
-mainfont: 'PT Serif'
-monofont: 'Consolas'
 fontsize: 14pt
 geometry: margin=2cm
 header-includes: |
+    \usepackage{fontspec}
     \usepackage{polyglossia}
+    \usepackage{unicode-math}
     \setmainlanguage{russian}
     \setotherlanguage{english}
+    \usepackage{unicode-math}
+    \setmainfont{CMU Serif}
+    \setsansfont{CMU Sans Serif}
+    \setmonofont{CMU Typewriter Text}
     \usepackage{caption}
     \captionsetup[figure]{font={normalfont},format=plain,labelsep=period}
     \usepackage{fvextra}

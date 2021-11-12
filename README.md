@@ -10,7 +10,6 @@
 1. Установить [make для Windows](http://gnuwin32.sourceforge.net/packages/make.htm).
 1. Установить [Python 3](https://www.python.org/downloads/).
 1. Установить [rsvg-convert](http://sourceforge.net/projects/tumagcc/files/rsvg-convert-2.40.20.7z/download).
-1. Установить шрифты от [Paratype](http://rus.paratype.ru/pt-sans-pt-serif).
 
 ## Задачи
 
