@@ -21,9 +21,9 @@ header-includes: |
     \usepackage{hyperref}
     \hypersetup{
         colorlinks=true,
-        linkcolor=black,
+        linkcolor=violet,
         filecolor=magenta,      
-        urlcolor=black
+        urlcolor=violet
     }
     \usepackage{indentfirst}
     \setlength{\parindent}{1.5em}
