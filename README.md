@@ -56,7 +56,7 @@
 
 ## Благодарности
 
-* Проекту [gostdown](https://gitlab.iaaras.ru/iaaras/gostdown) за CSL-файл
-* [TMentosT](https://github.com/TMentosT)
+* Проекту [gostdown](https://gitlab.iaaras.ru/iaaras/gostdown) за CSL-файл.
+* [TMentosT](https://github.com/TMentosT).
 
   
