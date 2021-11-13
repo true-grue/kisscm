@@ -1,10 +1,10 @@
-MD_FILES = md/introduction.md md/command_line.md md/package_managers.md md/languages.md md/build_automation.md md/version_control.md md/docs_as_code.md md/virtual_machines.md
+MD_FILES = md/introduction.md md/command_line.md md/package_managers.md md/languages.md md/build_automation.md md/version_control.md md/docs_as_code.md md/virtual_machines.md md/bibliography.md
 
 HTML_FILE = build/kisscm.html
 PDF_FILE = build/kisscm.pdf
 DOCX_FILE = build/kisscm.docx
 
-OPTIONS = -d default.yaml --from=markdown+tex_math_single_backslash+tex_math_dollars+raw_tex --toc --resource-path=images -F pandoc-crossref --columns=1
+OPTIONS = -d default.yaml --from=markdown+tex_math_single_backslash+tex_math_dollars+raw_tex --toc --resource-path=images -F pandoc-crossref --columns=1 --citeproc
 
 all: html pdf docx
 

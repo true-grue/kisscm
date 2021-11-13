@@ -2,6 +2,7 @@ documentclass: extbook
 classoption: openany
 fontsize: 14pt
 geometry: margin=2cm
+biblatexoptions: [backend=biber]
 header-includes: |
     \usepackage{fontspec}
     \usepackage{polyglossia}
@@ -26,6 +27,3 @@ header-includes: |
     }
     \usepackage{indentfirst}
     \setlength{\parindent}{1.5em}
-
-
-
