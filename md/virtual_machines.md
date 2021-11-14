@@ -57,9 +57,24 @@ $$
 b b - 4 a c.
 $$
 
+В стековой модели вычислений это выражение представляется в постфиксной форме записи:
+
+```default
+b b * 4 a * c * -
+```
+
+В регистровой модели вычислений то же выражение может быть представлено трехадресным кодом:
+
+```default
+t1 = b * b
+t2 = 4 * a
+t3 = t2 * c
+t4 = t1 - t3
+```
+
 В JVM используется стековая модель вычислений:
 
-```
+```default
 0: iload_1
 1: iload_1
 2: imul
@@ -72,16 +87,16 @@ $$
 9: ireturn
 ```
 
-В CPython также используется стековая модель вычислений:
+В CPython тоже используется стековая модель вычислений:
 
-```
- 0 LOAD_FAST      
- 2 LOAD_FAST      
+```default
+ 0 LOAD_FAST                1 (b)
+ 2 LOAD_FAST                1 (b)
  4 BINARY_MULTIPLY
- 6 LOAD_CONST     
- 8 LOAD_FAST      
+ 6 LOAD_CONST               1 (4)
+ 8 LOAD_FAST                0 (a)
 10 BINARY_MULTIPLY
-12 LOAD_FAST      
+12 LOAD_FAST                2 (c)
 14 BINARY_MULTIPLY
 16 BINARY_SUBTRACT
 18 RETURN_VALUE
@@ -89,7 +104,7 @@ $$
 
 Виртуальная машина языка Lua использует регистровую вычислительную модель (см. числа после имен операций):
 
-```
+```default
 1	MUL  	3 1 1	
 2	MMBIN	1 1 8	; __mul
 3	MULK	4 0 0	; 4

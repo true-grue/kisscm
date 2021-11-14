@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="416.45779"
+   height="326.63657"
+   version="1.1"
+   id="svg1016"
+   sodipodi:docname="d2.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1018"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="2.62954"
+     inkscape:cx="146.79374"
+     inkscape:cy="159.9139"
+     inkscape:window-width="2498"
+     inkscape:window-height="1417"
+     inkscape:window-x="54"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1016" />
+  <defs
+     id="defs952">
+    <style
+       type="text/css"
+       id="style950">
+    @namespace &quot;http://www.w3.org/2000/svg&quot;;
+    .line                 {fill: none; stroke: #262626; stroke-width: 1;}
+    .bold-line            {stroke: #0A0A0A; shape-rendering: crispEdges; stroke-width: 2;}
+    .thin-line            {stroke: #0F0F0F; shape-rendering: crispEdges}
+    .filled               {fill: #262626; stroke: none;}
+    text.terminal         {font-family: Verdana, Sans-serif;
+                            font-size: 12px;
+                            fill: #0A0A0A;
+                            font-weight: bold;
+                          }
+    text.nonterminal      {font-family: Verdana, Sans-serif;
+                            font-size: 12px;
+                            fill: #0D0D0D;
+                            font-weight: normal;
+                          }
+    text.regexp           {font-family: Verdana, Sans-serif;
+                            font-size: 12px;
+                            fill: #0F0F0F;
+                            font-weight: normal;
+                          }
+    rect, circle, polygon {fill: #262626; stroke: #262626;}
+    rect.terminal         {fill: #FFFFFF; stroke: #262626; stroke-width: 1;}
+    rect.nonterminal      {fill: #FFFFFF; stroke: #262626; stroke-width: 1;}
+    rect.text             {fill: none; stroke: none;}
+    polygon.regexp        {fill: #FFFFFF; stroke: #262626; stroke-width: 1;}
+  </style>
+  </defs>
+  <polygon
+     points="1,13 1,21 9,17 "
+     id="polygon954"
+     transform="translate(3.8473039,203.13657)" />
+  <polygon
+     points="9,13 9,21 17,17 "
+     id="polygon956"
+     transform="translate(3.8473039,203.13657)" />
+  <rect
+     x="54.847305"
+     y="206.13657"
+     width="82"
+     height="32"
+     id="rect958" />
+  <rect
+     x="52.847305"
+     y="204.13657"
+     width="82"
+     height="32"
+     class="nonterminal"
+     id="rect960" />
+  <text
+     class="nonterminal"
+     x="62.847305"
+     y="224.13657"
+     id="text962"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.6667px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, '">Значение</text>
+  <rect
+     x="54.847305"
+     y="250.13657"
+     width="94"
+     height="32"
+     id="rect966" />
+  <rect
+     x="52.847305"
+     y="248.13657"
+     width="94"
+     height="32"
+     class="nonterminal"
+     id="rect968" />
+  <text
+     class="nonterminal"
+     x="62.847305"
+     y="268.13657"
+     id="text970"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.6667px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, '">Выражение</text>
+  <rect
+     x="168.84731"
+     y="250.13657"
+     width="86"
+     height="32"
+     id="rect974" />
+  <rect
+     x="166.84731"
+     y="248.13657"
+     width="86"
+     height="32"
+     class="nonterminal"
+     id="rect976" />
+  <text
+     class="nonterminal"
+     x="176.84731"
+     y="268.13657"
+     id="text978"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.6667px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, '">Операция</text>
+  <rect
+     x="274.84729"
+     y="250.13657"
+     width="94"
+     height="32"
+     id="rect982" />
+  <rect
+     x="272.84729"
+     y="248.13657"
+     width="94"
+     height="32"
+     class="nonterminal"
+     id="rect984" />
+  <text
+     class="nonterminal"
+     x="282.84729"
+     y="268.13657"
+     id="text986"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.6667px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, '">Выражение</text>
+  <rect
+     x="54.847305"
+     y="294.13657"
+     width="26"
+     height="32"
+     rx="10"
+     id="rect990" />
+  <rect
+     x="52.847305"
+     y="292.13657"
+     width="26"
+     height="32"
+     class="terminal"
+     rx="10"
+     id="rect992" />
+  <text
+     class="terminal"
+     x="62.847305"
+     y="312.13657"
+     id="text994"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.6667px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, '">(</text>
+  <rect
+     x="100.84731"
+     y="294.13657"
+     width="94"
+     height="32"
+     id="rect996" />
+  <rect
+     x="98.847305"
+     y="292.13657"
+     width="94"
+     height="32"
+     class="nonterminal"
+     id="rect998" />
+  <text
+     class="nonterminal"
+     x="108.84731"
+     y="312.13657"
+     id="text1000"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.6667px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, '">Выражение</text>
+  <rect
+     x="214.84731"
+     y="294.13657"
+     width="26"
+     height="32"
+     rx="10"
+     id="rect1004" />
+  <rect
+     x="212.84731"
+     y="292.13657"
+     width="26"
+     height="32"
+     class="terminal"
+     rx="10"
+     id="rect1006" />
+  <text
+     class="terminal"
+     x="222.84731"
+     y="312.13657"
+     id="text1008"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.6667px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, '">)</text>
+  <path
+     class="line"
+     d="m 20.847304,220.13657 h 2 m 20,0 h 10 m 81.999996,0 h 10 m 0,0 h 232 m -353.999996,0 h 20 m 333.999996,0 h 20 m -373.999996,0 q 10,0 10,10 m 353.999996,0 q 0,-10 10,-10 m -363.999996,10 v 24 m 353.999996,0 v -24 m -353.999996,24 q 0,10 10,10 m 333.999996,0 q 10,0 10,-10 m -343.999996,10 h 10 m 93.999996,0 h 10 m 0,0 h 10 m 86,0 h 10 m 0,0 h 10 m 94,0 h 10 m -343.999996,-10 v 20 m 353.999996,0 v -20 m -353.999996,20 v 24 m 353.999996,0 v -24 m -353.999996,24 q 0,10 10,10 m 333.999996,0 q 10,0 10,-10 m -343.999996,10 h 10 m 26,0 h 10 m 0,0 h 10 m 93.999996,0 h 10 m 0,0 h 10 m 26,0 h 10 m 0,0 h 128 m 23,-88 h -3"
+     id="path1010" />
+  <polygon
+     points="411,13 411,21 403,17 "
+     id="polygon1012"
+     transform="translate(3.8473039,203.13657)" />
+  <polygon
+     points="395,13 395,21 403,17 "
+     id="polygon1014"
+     transform="translate(3.8473039,203.13657)" />
+  <polygon
+     points="1,21 9,17 1,13 "
+     id="polygon1115"
+     style="fill:#262626;stroke:#262626"
+     transform="translate(1.4421469,22.047256)" />
+  <polygon
+     points="9,21 17,17 9,13 "
+     id="polygon1117"
+     style="fill:#262626;stroke:#262626"
+     transform="translate(1.4421469,22.047256)" />
+  <rect
+     x="52.44215"
+     y="25.047256"
+     width="58"
+     height="32"
+     id="rect1119" />
+  <rect
+     x="50.44215"
+     y="23.047256"
+     width="58"
+     height="32"
+     class="nonterminal"
+     id="rect1121" />
+  <text
+     class="nonterminal"
+     x="60.44215"
+     y="43.047256"
+     id="text1123"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.6667px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, '">Число</text>
+  <rect
+     x="52.44215"
+     y="69.047256"
+     width="100"
+     height="32"
+     id="rect1127" />
+  <rect
+     x="50.44215"
+     y="67.047256"
+     width="100"
+     height="32"
+     class="nonterminal"
+     id="rect1129" />
+  <text
+     class="nonterminal"
+     x="60.44215"
+     y="87.047256"
+     id="text1131"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.6667px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, '">Переменная</text>
+  <path
+     class="line"
+     d="m 18.442147,39.047256 h 2 m 19.999998,0 h 10 m 57.999995,0 h 10 m 0,0 h 42 m -139.999993,0 h 19.999998 m 119.999995,0 h 20 m -159.999993,0 q 10,0 10,10 m 139.999993,0 q 0,-10 10,-10 m -149.999993,10 v 24 m 139.999993,0 v -24 m -139.999993,24 q 0,10 9.999998,10 m 119.999995,0 q 10,0 10,-10 m -129.999995,10 h 10 m 99.999995,0 h 10 m 23,-44 h -3"
+     id="path1135"
+     style="fill:none;stroke:#262626;stroke-width:1" />
+  <polygon
+     points="197,21 189,17 197,13 "
+     id="polygon1137"
+     style="fill:#262626;stroke:#262626"
+     transform="translate(1.4421469,22.047256)" />
+  <polygon
+     points="181,21 189,17 181,13 "
+     id="polygon1139"
+     style="fill:#262626;stroke:#262626"
+     transform="translate(1.4421469,22.047256)" />
+  <polygon
+     points="1,13 1,21 9,17 "
+     id="polygon1248"
+     style="fill:#262626;stroke:#262626"
+     transform="translate(288.95779,18.358486)" />
+  <polygon
+     points="9,13 9,21 17,17 "
+     id="polygon1250"
+     style="fill:#262626;stroke:#262626"
+     transform="translate(288.95779,18.358486)" />
+  <rect
+     x="339.95776"
+     y="21.358475"
+     width="30"
+     height="32"
+     rx="10"
+     id="rect1252"
+     style="fill:#262626;stroke:#262626" />
+  <rect
+     x="337.95776"
+     y="19.358475"
+     width="30"
+     height="32"
+     class="terminal"
+     rx="10"
+     id="rect1254"
+     style="fill:#ffffff;stroke:#262626;stroke-width:1" />
+  <text
+     class="terminal"
+     x="347.95776"
+     y="39.358475"
+     id="text1256"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.6667px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';fill:#0a0a0a">+</text>
+  <rect
+     x="339.95776"
+     y="65.358475"
+     width="26"
+     height="32"
+     rx="10"
+     id="rect1258"
+     style="fill:#262626;stroke:#262626" />
+  <rect
+     x="337.95776"
+     y="63.358475"
+     width="26"
+     height="32"
+     class="terminal"
+     rx="10"
+     id="rect1260"
+     style="fill:#ffffff;stroke:#262626;stroke-width:1" />
+  <text
+     class="terminal"
+     x="347.95776"
+     y="83.358482"
+     id="text1262"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.6667px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';fill:#0a0a0a">-</text>
+  <rect
+     x="339.95776"
+     y="109.35848"
+     width="28"
+     height="32"
+     rx="10"
+     id="rect1264"
+     style="fill:#262626;stroke:#262626" />
+  <rect
+     x="337.95776"
+     y="107.35848"
+     width="28"
+     height="32"
+     class="terminal"
+     rx="10"
+     id="rect1266"
+     style="fill:#ffffff;stroke:#262626;stroke-width:1" />
+  <text
+     class="terminal"
+     x="347.95776"
+     y="127.35848"
+     id="text1268"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.6667px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';fill:#0a0a0a">*</text>
+  <rect
+     x="339.95776"
+     y="153.35849"
+     width="28"
+     height="32"
+     rx="10"
+     id="rect1270"
+     style="fill:#262626;stroke:#262626" />
+  <rect
+     x="337.95776"
+     y="151.35849"
+     width="28"
+     height="32"
+     class="terminal"
+     rx="10"
+     id="rect1272"
+     style="fill:#ffffff;stroke:#262626;stroke-width:1" />
+  <text
+     class="terminal"
+     x="347.95776"
+     y="171.35849"
+     id="text1274"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.6667px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';fill:#0a0a0a">/</text>
+  <path
+     class="line"
+     d="m 305.95779,35.358486 h 2 m 20,0 h 10 m 30,0 h 10 m -70,0 h 20 m 50,0 h 20 m -90,0 q 10,0 10,10 m 70,0 q 0,-10 10,-10 m -80,10 v 24 m 70,0 v -24 m -70,24 q 0,10 10,10 m 50,0 q 10,0 10,-10 m -60,10 h 10 m 26,0 h 10 m 0,0 h 4 m -60,-10 v 20 m 70,0 v -20 m -70,20 v 24.000004 m 70,0 V 89.358486 m -70,24.000004 q 0,10 10,10 m 50,0 q 10,0 10,-10 m -60,10 h 10 m 28,0 h 10 m 0,0 h 2 m -60,-10 v 20 m 70,0 v -20 m -70,20 v 24 m 70,0 v -24 m -70,24 q 0,10 10,10 m 50,0 q 10,0 10,-10 m -60,10 h 10 m 28,0 h 10 m 0,0 h 2 m 23,-132.000004 h -3"
+     id="path1276"
+     style="fill:none;stroke:#262626;stroke-width:1" />
+  <polygon
+     points="127,13 127,21 119,17 "
+     id="polygon1278"
+     style="fill:#262626;stroke:#262626"
+     transform="translate(288.95779,18.358486)" />
+  <polygon
+     points="111,13 111,21 119,17 "
+     id="polygon1280"
+     style="fill:#262626;stroke:#262626"
+     transform="translate(288.95779,18.358486)" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';fill:#000000;fill-opacity:1;stroke:none"
+     x="-0.3359375"
+     y="12.608932"
+     id="text4061"><tspan
+       sodipodi:role="line"
+       id="tspan4059"
+       x="-0.3359375"
+       y="12.608932"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, '">Значение</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';fill:#000000;fill-opacity:1;stroke:none"
+     x="287.5643"
+     y="10.835938"
+     id="text4061-3"><tspan
+       sodipodi:role="line"
+       id="tspan4059-6"
+       x="287.5643"
+       y="10.835938"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, '">Операция</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';fill:#000000;fill-opacity:1;stroke:none"
+     x="1.2341266"
+     y="189.89265"
+     id="text4061-3-1"><tspan
+       sodipodi:role="line"
+       id="tspan4059-6-3"
+       x="1.2341266"
+       y="189.89265"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, '">Выражение</tspan></text>
+</svg>
