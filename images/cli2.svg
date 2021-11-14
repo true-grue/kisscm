@@ -13,13 +13,13 @@
 <g id="node1" class="node">
 <title>n1c</title>
 <ellipse fill="lightgrey" stroke="black" cx="54" cy="-45" rx="18" ry="18"/>
-<text text-anchor="middle" x="54" y="-41.9" font-family="Times New Roman,serif" font-size="12.00">pwd</text>
+<text text-anchor="middle" x="54" y="-41.6" font-family="Times New Roman,serif" font-size="13.00">pwd</text>
 </g>
 <!-- nZc -->
 <g id="node2" class="node">
 <title>nZc</title>
 <polygon fill="none" stroke="black" points="180,-63 144,-63 144,-27 180,-27 180,-63"/>
-<text text-anchor="middle" x="162" y="-41.9" font-family="Times New Roman,serif" font-size="12.00">stdout</text>
+<text text-anchor="middle" x="162" y="-41.6" font-family="Times New Roman,serif" font-size="13.00">stdout</text>
 </g>
 <!-- n1c&#45;&gt;nZc -->
 <g id="edge1" class="edge">
@@ -31,7 +31,7 @@
 <g id="node4" class="node">
 <title>n3c</title>
 <polygon fill="none" stroke="black" points="288,-63 252,-63 252,-27 288,-27 288,-63"/>
-<text text-anchor="middle" x="270" y="-41.9" font-family="Times New Roman,serif" font-size="12.00">stdin</text>
+<text text-anchor="middle" x="270" y="-41.6" font-family="Times New Roman,serif" font-size="13.00">stdin</text>
 </g>
 <!-- nZc&#45;&gt;n3c -->
 <g id="edge2" class="edge">
@@ -43,13 +43,13 @@
 <g id="node3" class="node">
 <title>n2c</title>
 <polygon fill="none" stroke="black" points="684,-63 576,-63 576,-27 684,-27 684,-63"/>
-<text text-anchor="middle" x="630" y="-41.9" font-family="Times New Roman,serif" font-size="12.00">Экран: toor/</text>
+<text text-anchor="middle" x="630" y="-41.6" font-family="Times New Roman,serif" font-size="13.00">Экран: toor/</text>
 </g>
 <!-- n6c -->
 <g id="node7" class="node">
 <title>n6c</title>
 <ellipse fill="lightgrey" stroke="black" cx="378" cy="-45" rx="18" ry="18"/>
-<text text-anchor="middle" x="378" y="-41.9" font-family="Times New Roman,serif" font-size="12.00">rev</text>
+<text text-anchor="middle" x="378" y="-41.6" font-family="Times New Roman,serif" font-size="13.00">rev</text>
 </g>
 <!-- n3c&#45;&gt;n6c -->
 <g id="edge3" class="edge">
@@ -61,7 +61,7 @@
 <g id="node5" class="node">
 <title>n4c</title>
 <polygon fill="none" stroke="black" points="504,-90 468,-90 468,-54 504,-54 504,-90"/>
-<text text-anchor="middle" x="486" y="-68.9" font-family="Times New Roman,serif" font-size="12.00">stdout</text>
+<text text-anchor="middle" x="486" y="-68.6" font-family="Times New Roman,serif" font-size="13.00">stdout</text>
 </g>
 <!-- n4c&#45;&gt;n2c -->
 <g id="edge6" class="edge">
@@ -73,7 +73,7 @@
 <g id="node6" class="node">
 <title>n5c</title>
 <polygon fill="none" stroke="black" points="504,-36 468,-36 468,0 504,0 504,-36"/>
-<text text-anchor="middle" x="486" y="-14.9" font-family="Times New Roman,serif" font-size="12.00">stderr</text>
+<text text-anchor="middle" x="486" y="-14.6" font-family="Times New Roman,serif" font-size="13.00">stderr</text>
 </g>
 <!-- n5c&#45;&gt;n2c -->
 <g id="edge7" class="edge">
@@ -97,13 +97,13 @@
 <g id="node8" class="node">
 <title>n1b</title>
 <polygon fill="none" stroke="black" points="108,-117 0,-117 0,-81 108,-81 108,-117"/>
-<text text-anchor="middle" x="54" y="-95.9" font-family="Times New Roman,serif" font-size="12.00">Клавиатура: abcd</text>
+<text text-anchor="middle" x="54" y="-95.6" font-family="Times New Roman,serif" font-size="13.00">Клавиатура: abcd</text>
 </g>
 <!-- n3b -->
 <g id="node10" class="node">
 <title>n3b</title>
 <polygon fill="none" stroke="black" points="180,-117 144,-117 144,-81 180,-81 180,-117"/>
-<text text-anchor="middle" x="162" y="-95.9" font-family="Times New Roman,serif" font-size="12.00">stdin</text>
+<text text-anchor="middle" x="162" y="-95.6" font-family="Times New Roman,serif" font-size="13.00">stdin</text>
 </g>
 <!-- n1b&#45;&gt;n3b -->
 <g id="edge8" class="edge">
@@ -115,13 +115,13 @@
 <g id="node9" class="node">
 <title>n2b</title>
 <polygon fill="none" stroke="black" points="540,-158 432,-158 432,-122 540,-122 540,-158"/>
-<text text-anchor="middle" x="486" y="-136.9" font-family="Times New Roman,serif" font-size="12.00">Экран: dcba</text>
+<text text-anchor="middle" x="486" y="-136.6" font-family="Times New Roman,serif" font-size="13.00">Экран: dcba</text>
 </g>
 <!-- n6b -->
 <g id="node13" class="node">
 <title>n6b</title>
 <ellipse fill="lightgrey" stroke="black" cx="270" cy="-99" rx="18" ry="18"/>
-<text text-anchor="middle" x="270" y="-95.9" font-family="Times New Roman,serif" font-size="12.00">rev</text>
+<text text-anchor="middle" x="270" y="-95.6" font-family="Times New Roman,serif" font-size="13.00">rev</text>
 </g>
 <!-- n3b&#45;&gt;n6b -->
 <g id="edge9" class="edge">
@@ -133,7 +133,7 @@
 <g id="node11" class="node">
 <title>n4b</title>
 <polygon fill="none" stroke="black" points="396,-171 360,-171 360,-135 396,-135 396,-171"/>
-<text text-anchor="middle" x="378" y="-149.9" font-family="Times New Roman,serif" font-size="12.00">stdout</text>
+<text text-anchor="middle" x="378" y="-149.6" font-family="Times New Roman,serif" font-size="13.00">stdout</text>
 </g>
 <!-- n4b&#45;&gt;n2b -->
 <g id="edge12" class="edge">
@@ -145,7 +145,7 @@
 <g id="node12" class="node">
 <title>n5b</title>
 <polygon fill="none" stroke="black" points="396,-117 360,-117 360,-81 396,-81 396,-117"/>
-<text text-anchor="middle" x="378" y="-95.9" font-family="Times New Roman,serif" font-size="12.00">stderr</text>
+<text text-anchor="middle" x="378" y="-95.6" font-family="Times New Roman,serif" font-size="13.00">stderr</text>
 </g>
 <!-- n5b&#45;&gt;n2b -->
 <g id="edge13" class="edge">
@@ -169,13 +169,13 @@
 <g id="node14" class="node">
 <title>n2</title>
 <polygon fill="none" stroke="black" points="324,-198 216,-198 216,-162 324,-162 324,-198"/>
-<text text-anchor="middle" x="270" y="-176.9" font-family="Times New Roman,serif" font-size="12.00">Экран: /root</text>
+<text text-anchor="middle" x="270" y="-176.6" font-family="Times New Roman,serif" font-size="13.00">Экран: /root</text>
 </g>
 <!-- n4 -->
 <g id="node15" class="node">
 <title>n4</title>
 <polygon fill="none" stroke="black" points="180,-225 144,-225 144,-189 180,-189 180,-225"/>
-<text text-anchor="middle" x="162" y="-203.9" font-family="Times New Roman,serif" font-size="12.00">stdout</text>
+<text text-anchor="middle" x="162" y="-203.6" font-family="Times New Roman,serif" font-size="13.00">stdout</text>
 </g>
 <!-- n4&#45;&gt;n2 -->
 <g id="edge16" class="edge">
@@ -187,7 +187,7 @@
 <g id="node16" class="node">
 <title>n5</title>
 <polygon fill="none" stroke="black" points="180,-171 144,-171 144,-135 180,-135 180,-171"/>
-<text text-anchor="middle" x="162" y="-149.9" font-family="Times New Roman,serif" font-size="12.00">stderr</text>
+<text text-anchor="middle" x="162" y="-149.6" font-family="Times New Roman,serif" font-size="13.00">stderr</text>
 </g>
 <!-- n5&#45;&gt;n2 -->
 <g id="edge17" class="edge">
@@ -199,7 +199,7 @@
 <g id="node17" class="node">
 <title>n6</title>
 <ellipse fill="lightgrey" stroke="black" cx="54" cy="-153" rx="18" ry="18"/>
-<text text-anchor="middle" x="54" y="-149.9" font-family="Times New Roman,serif" font-size="12.00">pwd</text>
+<text text-anchor="middle" x="54" y="-149.6" font-family="Times New Roman,serif" font-size="13.00">pwd</text>
 </g>
 <!-- n6&#45;&gt;n4 -->
 <g id="edge14" class="edge">
