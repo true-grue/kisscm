@@ -1,4 +1,12 @@
-MD_FILES = md/introduction.md md/command_line.md md/package_managers.md md/languages.md md/build_automation.md md/version_control.md md/docs_as_code.md md/virtual_machines.md md/bibliography.md
+MD_FILES = md/introduction.md \
+	md/command_line.md \
+	md/package_managers.md \
+	md/conf_languages.md \
+	md/build_automation.md \
+	md/version_control.md \
+	md/docs_as_code.md \
+	md/virtual_machines.md \
+	md/bibliography.md
 
 HTML_FILE = build/kisscm.html
 PDF_FILE = build/kisscm.pdf
