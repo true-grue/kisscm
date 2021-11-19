@@ -12,7 +12,7 @@ HTML_FILE = build/kisscm.html
 PDF_FILE = build/kisscm.pdf
 DOCX_FILE = build/kisscm.docx
 
-OPTIONS = -d default.yaml --from=markdown+tex_math_single_backslash+tex_math_dollars+raw_tex --toc --resource-path=images -F pandoc-crossref --columns=1 --citeproc
+OPTIONS = -d default.yaml --from=markdown+tex_math_single_backslash+tex_math_dollars+raw_tex --toc --resource-path=images -F pandoc-crossref --columns=1 --citeproc --lua-filter=filters/pagebreak.lua
 
 all: html pdf docx
 
