@@ -1,7 +1,9 @@
 $*.*
 ~*.*
 *.exe
-build/
+build/*.docx
+build/*.pdf
+build/*.html
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
