@@ -18,4 +18,4 @@
 ## Благодарности
 
 * Проекту [gostdown](https://gitlab.iaaras.ru/iaaras/gostdown) за CSL-файл.
-* [TMentosT](https://github.com/TMentosT).
+* [TMentosT](https://github.com/TMentosT) за демонстрацию работы шаблонным docx-файлом.
