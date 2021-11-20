@@ -11,7 +11,7 @@
 1. Установить [Python 3](https://www.python.org/downloads/).
 1. Установить [rsvg-convert](http://sourceforge.net/projects/tumagcc/files/rsvg-convert-2.40.20.7z/download).
 
-## TORO
+## TODO
 
 * Реализовать вывод в HTML в духе [mdBook](https://rust-lang.github.io/mdBook/) и [Bookdown](https://bookdown.org/).
 
