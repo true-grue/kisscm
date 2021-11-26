@@ -17,6 +17,9 @@
 
 ## Благодарности
 
-* [gostdown](https://gitlab.iaaras.ru/iaaras/gostdown) за CSL-файл.
+Проекту [gostdown](https://gitlab.iaaras.ru/iaaras/gostdown) за CSL-файл.
+
+Студентам:
+
 * [TMentosT](https://github.com/TMentosT) за демонстрацию работы с шаблонным docx-файлом.
 * [HaidesAidoseus](https://github.com/HaidesAidoseus) за рисунки.
