@@ -23,3 +23,4 @@
 
 * [TMentosT](https://github.com/TMentosT) за демонстрацию работы с шаблонным docx-файлом.
 * [HaidesAidoseus](https://github.com/HaidesAidoseus) за рисунки.
+* [maxim760](https://github.com/maxim760) за исправление опечаток.

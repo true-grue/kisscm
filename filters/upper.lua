@@ -9,11 +9,3 @@ function Header(el)
         end })
     end
 end
-
-function Link(el)
-    return el.content
-end
-
-function Note(el)
-    return {}
-end
