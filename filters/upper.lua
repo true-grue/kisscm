@@ -2,7 +2,7 @@
 local text = require('text')
 
 function Header(el)
-    if el.level == 1 then
+    if el.level == 1 and FORMAT == 'docx' then
       return pandoc.walk_block(el, {
         Str = function(el)
             return pandoc.Str(text.upper(el.text))
