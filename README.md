@@ -25,3 +25,4 @@
 * [HaidesAidoseus](https://github.com/HaidesAidoseus) за рисунки.
 * [maxim760](https://github.com/maxim760) за исправление опечаток.
 * [adpadalko](https://github.com/adpadalko) за исправления и расшифровку некоторых названий.
+* [Samsonenko-Stanislav](https://github.com/Samsonenko-Stanislav) за исправление опечаток.
