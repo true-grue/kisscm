@@ -23,6 +23,6 @@
 
 * [TMentosT](https://github.com/TMentosT) за демонстрацию работы с шаблонным docx-файлом.
 * [HaidesAidoseus](https://github.com/HaidesAidoseus) за рисунки.
-* [maxim760](https://github.com/maxim760) за исправление опечаток.
+* [maxim760](https://github.com/maxim760), [Samsonenko-Stanislav](https://github.com/Samsonenko-Stanislav) за исправление опечаток.
 * [adpadalko](https://github.com/adpadalko) за исправления и расшифровку некоторых названий.
-* [Samsonenko-Stanislav](https://github.com/Samsonenko-Stanislav) за исправление опечаток.
+* [CalamityDeadshot](https://github.com/CalamityDeadshot) за добавления в главу о системах контроля версий.
