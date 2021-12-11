@@ -4,6 +4,8 @@ fontsize: 14pt
 geometry: margin=2cm
 biblatexoptions: [backend=biber]
 header-includes: |
+    \usepackage{microtype}
+    \microtypesetup{nopatch=item}
     \usepackage{fontspec}
     \usepackage{polyglossia}
     \usepackage{unicode-math}
