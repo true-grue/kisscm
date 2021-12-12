@@ -42,3 +42,7 @@ $(DOCX_FILE): $(MD_FILES)
 
 clean:
 	powershell rm build/*.*
+
+re: clean all
+
+.PHONY: all clean re
