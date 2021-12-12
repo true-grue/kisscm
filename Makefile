@@ -45,4 +45,4 @@ clean:
 
 re: clean all
 
-.PHONY: all clean re
+.PHONY: all html pdf docx clean re
