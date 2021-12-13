@@ -1,6 +1,7 @@
 $*.*
 ~*.*
 *.exe
+!mdbook.exe
 build/*.docx
 build/*.pdf
 build/*.html
