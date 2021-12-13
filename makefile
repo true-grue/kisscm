@@ -11,6 +11,7 @@ MD_FILES = md/introduction.md \
 HTML_FILE = build/kisscm.html
 PDF_FILE = build/kisscm.pdf
 DOCX_FILE = build/kisscm.docx
+MARKDOWN_FILE = build/kisscm.md
 
 OPTIONS = -d default.yaml \
 	--from=markdown+tex_math_single_backslash+tex_math_dollars+raw_tex \
@@ -22,6 +23,12 @@ OPTIONS = -d default.yaml \
 	--lua-filter=filters/pagebreak.lua \
 	--lua-filter=filters/upper.lua
 
+MD_OPTIONS = -d default.yaml \
+	--from=markdown+tex_math_single_backslash+tex_math_dollars+raw_tex \
+	--resource-path=./images \
+	-F pandoc-crossref \
+	--citeproc \
+
 all: html pdf docx
 
 html: $(HTML_FILE)
@@ -29,6 +36,8 @@ html: $(HTML_FILE)
 pdf: $(PDF_FILE)
 
 docx: $(DOCX_FILE)
+
+mdbook: $(MARKDOWN_FILE)
 
 $(HTML_FILE): $(MD_FILES)
 	pandoc $(MD_FILES) $(OPTIONS) --output=$(HTML_FILE) --to=html5 --mathjax --self-contained
@@ -39,6 +48,14 @@ $(PDF_FILE): $(MD_FILES)
 $(DOCX_FILE): $(MD_FILES)
 	pandoc $(MD_FILES) $(OPTIONS) --reference-doc=template.docx --output=$(DOCX_FILE) --to=docx
 	python filters/bullets.py $(DOCX_FILE)
+
+$(MARKDOWN_FILE): $(MD_FILES)
+	pandoc $(MD_FILES) $(MD_OPTIONS) --output=$(MARKDOWN_FILE) --to=markdown_strict --mathjax
+	powershell cp -r ./$(MARKDOWN_FILE) ./mdbook/src/
+	python ./mdbook/generate_summary.py
+	powershell cp ./images/* ./mdbook/src/
+	powershell cd ./mdbook/; ./mdbook.exe build
+	powershell rm $(MARKDOWN_FILE)
 
 clean:
 	powershell rm build/*.*

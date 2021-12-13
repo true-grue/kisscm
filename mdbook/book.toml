@@ -1,0 +1,13 @@
+[book]
+authors = ["П.Н. Советов"]
+language = "ru_RU"
+multilingual = false
+src = "src"
+title = "КОНФИГУРАЦИОННОЕ УПРАВЛЕНИЕ"
+
+[output.html]
+mathjax-support = true
+
+[output.html.playground]
+editable = true
+line-numbers = true
