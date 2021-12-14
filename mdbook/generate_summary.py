@@ -47,19 +47,24 @@ for i in range(1, len(found_headlines)):
     current_start_pos = found_headlines[i - 1].span()[0]
     next_start_pos = found_headlines[i].span()[0]
 
-    text_block = data[current_start_pos:next_start_pos]
+    if i != len(found_headlines) - 1:
+        text_block = data[current_start_pos:next_start_pos]
+    else:
+        text_block = data[next_start_pos:]
+
     title = re.findall(headline_regexp, text_block, flags=re.MULTILINE)[
         0].strip()
-    
+
     new_file_name = transliteration(title.replace('#', '').strip()) + '.md'
 
     title_without_nums = re.sub(r'(?:\d\.?)+', '', title).strip()
 
-    if len(data[current_start_pos:next_start_pos].replace(title, '').strip()) > 1:
+    if len(text_block.replace(title, '').strip()) > 1:
         with open(os.path.join(stc_folder_path, new_file_name), 'w', encoding='utf-8') as f:
-            f.write(data[current_start_pos:next_start_pos])
+            f.write(text_block)
 
-        titles.append({'title': title_without_nums, 'file_name': new_file_name})
+        titles.append({'title': title_without_nums,
+                      'file_name': new_file_name})
     else:
         titles.append({'title': title_without_nums, 'file_name': None})
 
