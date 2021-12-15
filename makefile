@@ -22,7 +22,7 @@ OPTIONS = -d default.yaml \
 	--lua-filter=filters/pagebreak.lua \
 	--lua-filter=filters/upper.lua
 
-ifeq ($(OS),Windows_NT)
+ifeq ($(OS), Windows_NT)
 	MKDIR_BUILD = if not exist build mkdir build
 	RM_BUILD = del /q build\*.*
 else
