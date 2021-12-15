@@ -23,10 +23,10 @@ OPTIONS = -d default.yaml \
 	--lua-filter=filters/upper.lua
 
 ifeq ($(OS), Windows_NT)
-	MKDIR_BUILD = if not exist build mkdir build
+	MK_BUILD = if not exist build mkdir build
 	RM_BUILD = del /q build\*.*
 else
-	MKDIR_BUILD = mkdir -p build
+	MK_BUILD = mkdir -p build
 	RM_BUILD = rm build/*.*
 endif
 
@@ -39,15 +39,15 @@ pdf: $(PDF_FILE)
 docx: $(DOCX_FILE)
 
 $(HTML_FILE): $(MD_FILES)
-	$(MKDIR_BUILD)
+	$(MK_BUILD)
 	pandoc $(MD_FILES) $(OPTIONS) --output=$(HTML_FILE) --to=html5 --mathjax --self-contained
 
 $(PDF_FILE): $(MD_FILES)
-	$(MKDIR_BUILD)
+	$(MK_BUILD)
 	pandoc $(MD_FILES) $(OPTIONS) --metadata-file pdf.yaml --output=$(PDF_FILE) --to=latex --pdf-engine=xelatex
 
 $(DOCX_FILE): $(MD_FILES)
-	$(MKDIR_BUILD)
+	$(MK_BUILD)
 	pandoc $(MD_FILES) $(OPTIONS) --reference-doc=template.docx --output=$(DOCX_FILE) --to=docx
 	python filters/bullets.py $(DOCX_FILE)
 
