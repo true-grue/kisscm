@@ -1,0 +1,856 @@
+digraph CIV {
+    graph [nodesep=.35,
+        ranksep=.85
+    ];
+    node [label="\N"];
+    POTTERY  [color=black,
+        fillcolor=pink,
+        label=Pottery,
+        style=filled,
+        tooltip="No Boost"];
+    IRRIGATION   [color=black,
+        fillcolor=pink,
+        label=Irrigation,
+        style=filled,
+        tooltip="Farm resource"];
+    POTTERY -> IRRIGATION;
+    WRITING  [color=black,
+        fillcolor=pink,
+        label=Writing,
+        style=filled,
+        tooltip="Meet Civ"];
+    POTTERY -> WRITING;
+    ANIMAL_HUSBANDRY     [color=black,
+        fillcolor=pink,
+        label="Animal Husbandry",
+        style=filled,
+        tooltip="No Boost"];
+    ARCHERY  [color=black,
+        fillcolor=pink,
+        label=Archery,
+        style=filled,
+        tooltip="Slinger Kill"];
+    ANIMAL_HUSBANDRY -> ARCHERY;
+    MINING   [color=black,
+        fillcolor=pink,
+        label=Mining,
+        style=filled,
+        tooltip="No Boost"];
+    MASONRY  [color=black,
+        fillcolor=pink,
+        label=Masonry,
+        style=filled,
+        tooltip=Quarry];
+    MINING -> MASONRY;
+    BRONZE_WORKING   [color=black,
+        fillcolor=pink,
+        label="Bronze Working",
+        style=filled,
+        tooltip="Kill 3 Barbarians"];
+    MINING -> BRONZE_WORKING;
+    THE_WHEEL    [color=black,
+        fillcolor=pink,
+        label=Wheel,
+        style=filled,
+        tooltip=Mine];
+    MINING -> THE_WHEEL;
+    APPRENTICESHIP   [color=black,
+        fillcolor=yellow,
+        label=Apprenticeship,
+        style=filled,
+        tooltip="3 Mines"];
+    MINING -> APPRENTICESHIP     [color=blue];
+    SAILING  [color=black,
+        fillcolor=pink,
+        label=Sailing,
+        style=filled,
+        tooltip="No Boost"];
+    CELESTIAL_NAVIGATION     [color=black,
+        fillcolor=orange,
+        label="Celestial Navigation",
+        style=filled,
+        tooltip="2 Sea resources"];
+    SAILING -> CELESTIAL_NAVIGATION;
+    SHIPBUILDING     [color=black,
+        fillcolor=orange,
+        label=Shipbuilding,
+        style=filled,
+        tooltip="2 Galleys"];
+    SAILING -> SHIPBUILDING;
+    ASTROLOGY    [color=black,
+        fillcolor=pink,
+        label=Astrology,
+        style=filled,
+        tooltip="No Boost"];
+    ASTROLOGY -> CELESTIAL_NAVIGATION;
+    DRAMA_POETRY     [color=black,
+        fillcolor=orange,
+        label="Drama and Poetry",
+        shape=octagon,
+        style=filled,
+        tooltip=Wonder];
+    ASTROLOGY -> DRAMA_POETRY    [color=blue];
+    THEOLOGY     [color=black,
+        fillcolor=orange,
+        label=Theology,
+        shape=octagon,
+        style=filled,
+        tooltip=Religion];
+    ASTROLOGY -> THEOLOGY    [color=blue];
+    IRRIGATION -> DRAMA_POETRY   [color=blue];
+    HORSEBACK_RIDING     [color=black,
+        fillcolor=orange,
+        label="Horseback Riding",
+        style=filled,
+        tooltip=Pasture];
+    ARCHERY -> HORSEBACK_RIDING;
+    MACHINERY    [color=black,
+        fillcolor=yellow,
+        label=Machinery,
+        style=filled,
+        tooltip="3 Archer"];
+    ARCHERY -> MACHINERY     [color=blue];
+    CURRENCY     [color=black,
+        fillcolor=orange,
+        label=Currency,
+        style=filled,
+        tooltip="Trade route"];
+    WRITING -> CURRENCY;
+    STATE_WORKFORCE  [color=black,
+        fillcolor=pink,
+        label="State Workforce",
+        shape=octagon,
+        style=filled,
+        tooltip=District];
+    WRITING -> STATE_WORKFORCE   [color=blue];
+    RECORDED_HISTORY     [color=black,
+        fillcolor=orange,
+        label="Recorded History",
+        shape=octagon,
+        style=filled,
+        tooltip="2 Libraries"];
+    WRITING -> RECORDED_HISTORY  [color=blue];
+    CONSTRUCTION     [color=black,
+        fillcolor=orange,
+        label=Construction,
+        style=filled,
+        tooltip="Water Mill"];
+    MASONRY -> CONSTRUCTION;
+    ENGINEERING  [color=black,
+        fillcolor=orange,
+        label=Engineering,
+        style=filled,
+        tooltip="Anc Wall"];
+    MASONRY -> ENGINEERING   [color=blue];
+    MASONRY -> DRAMA_POETRY  [color=blue];
+    IRON_WORKING     [color=black,
+        fillcolor=orange,
+        label="Iron Working",
+        style=filled,
+        tooltip="Iron mine"];
+    BRONZE_WORKING -> IRON_WORKING;
+    MATHEMATICS  [color=black,
+        fillcolor=orange,
+        label=Mathematics,
+        style=filled,
+        tooltip="3 Districts"];
+    BRONZE_WORKING -> MATHEMATICS    [color=blue];
+    BRONZE_WORKING -> STATE_WORKFORCE    [color=blue];
+    MILITARY_TRAINING    [color=black,
+        fillcolor=orange,
+        label="Military Training",
+        shape=octagon,
+        style=filled,
+        tooltip=Encampment];
+    BRONZE_WORKING -> MILITARY_TRAINING  [color=blue];
+    THE_WHEEL -> CONSTRUCTION    [color=blue];
+    THE_WHEEL -> ENGINEERING;
+    CELESTIAL_NAVIGATION -> MATHEMATICS  [color=blue];
+    CARTOGRAPHY  [color=black,
+        fillcolor=green1,
+        label=Cartography,
+        style=filled,
+        tooltip="2 Harbours"];
+    CELESTIAL_NAVIGATION -> CARTOGRAPHY  [color=blue];
+    CURRENCY -> MATHEMATICS;
+    CURRENCY -> APPRENTICESHIP;
+    MEDIEVAL_FAIRES  [color=black,
+        fillcolor=yellow,
+        label="Medieval Faires",
+        shape=octagon,
+        style=filled,
+        tooltip="4 Trade Routes"];
+    CURRENCY -> MEDIEVAL_FAIRES  [color=blue];
+    GUILDS   [color=black,
+        fillcolor=yellow,
+        label=Guilds,
+        shape=octagon,
+        style=filled,
+        tooltip="2 Markets"];
+    CURRENCY -> GUILDS   [color=blue];
+    MERCANTILISM     [color=black,
+        fillcolor=green1,
+        label=Mercantilism,
+        shape=octagon,
+        style=filled,
+        tooltip="Great Merchant"];
+    CURRENCY -> MERCANTILISM     [color=blue];
+    HORSEBACK_RIDING -> CONSTRUCTION;
+    HORSEBACK_RIDING -> APPRENTICESHIP;
+    STIRRUPS     [color=black,
+        fillcolor=yellow,
+        label=Stirrups,
+        style=filled,
+        tooltip=Direct];
+    HORSEBACK_RIDING -> STIRRUPS;
+    IRON_WORKING -> MACHINERY;
+    SHIPBUILDING -> CARTOGRAPHY;
+    MASS_PRODUCTION  [color=black,
+        fillcolor=green1,
+        label="Mass Production",
+        style=filled,
+        tooltip="Lumber Mill"];
+    SHIPBUILDING -> MASS_PRODUCTION;
+    NAVAL_TRADITION  [color=black,
+        fillcolor=yellow,
+        label="Naval Tradition",
+        shape=octagon,
+        style=filled,
+        tooltip="Quadrireme Kill"];
+    SHIPBUILDING -> NAVAL_TRADITION  [color=blue];
+    MILITARY_TACTICS     [color=black,
+        fillcolor=yellow,
+        label="Military Tactics",
+        style=filled,
+        tooltip="Spearman Kill"];
+    MATHEMATICS -> MILITARY_TACTICS;
+    EDUCATION    [color=black,
+        fillcolor=yellow,
+        label=Education,
+        style=filled,
+        tooltip="Great Scientist"];
+    MATHEMATICS -> EDUCATION;
+    MILITARY_ENGINEERING     [color=black,
+        fillcolor=yellow,
+        label="Military Engineering",
+        style=filled,
+        tooltip=Aqueduct];
+    CONSTRUCTION -> MILITARY_ENGINEERING;
+    CASTLES  [color=black,
+        fillcolor=yellow,
+        label=Castles,
+        style=filled,
+        tooltip="6 slot"];
+    CONSTRUCTION -> CASTLES;
+    GAMES_RECREATION     [color=black,
+        fillcolor=orange,
+        label="Games and Recreation",
+        shape=octagon,
+        style=filled,
+        tooltip=Direct];
+    CONSTRUCTION -> GAMES_RECREATION     [color=red];
+    ENGINEERING -> MACHINERY;
+    ENGINEERING -> MILITARY_ENGINEERING  [color=blue];
+    APPRENTICESHIP -> EDUCATION;
+    GUNPOWDER    [color=black,
+        fillcolor=green1,
+        label=Gunpowder,
+        style=filled,
+        tooltip=Armory];
+    APPRENTICESHIP -> GUNPOWDER;
+    MACHINERY -> MASS_PRODUCTION     [color=blue];
+    PRINTING     [color=black,
+        fillcolor=green1,
+        label=Printing,
+        style=filled,
+        tooltip="2 Uni"];
+    MACHINERY -> PRINTING;
+    METAL_CASTING    [color=black,
+        fillcolor=green1,
+        label="Metal Casting",
+        style=filled,
+        tooltip="2 Crossbow"];
+    MACHINERY -> METAL_CASTING   [color=blue];
+    EDUCATION -> MASS_PRODUCTION;
+    BANKING  [color=black,
+        fillcolor=green1,
+        label=Banking,
+        style=filled,
+        tooltip=Direct];
+    EDUCATION -> BANKING;
+    EDUCATION -> PRINTING    [color=blue];
+    ASTRONOMY    [color=black,
+        fillcolor=green1,
+        label=Astronomy,
+        style=filled,
+        tooltip="Uni mountain"];
+    EDUCATION -> ASTRONOMY;
+    STIRRUPS -> BANKING;
+    STIRRUPS -> GUNPOWDER;
+    MILITARY_SCIENCE     [color=black,
+        fillcolor=cyan,
+        label="Military Science",
+        style=filled,
+        tooltip="Knight Kill"];
+    STIRRUPS -> MILITARY_SCIENCE     [color=blue];
+    MILITARY_ENGINEERING -> GUNPOWDER;
+    SIEGE_TACTICS    [color=black,
+        fillcolor=green1,
+        label="Siege Tactics",
+        style=filled,
+        tooltip="2 Bombards"];
+    CASTLES -> SIEGE_TACTICS;
+    SQUARE_RIGGING   [color=black,
+        fillcolor=green1,
+        label="Square Rigging",
+        style=filled,
+        tooltip="Musketman Kill"];
+    CARTOGRAPHY -> SQUARE_RIGGING;
+    EXPLORATION  [color=black,
+        fillcolor=green1,
+        label=Exploration,
+        shape=octagon,
+        style=filled,
+        tooltip="2 Caravels"];
+    CARTOGRAPHY -> EXPLORATION   [color=blue];
+    INDUSTRIALIZATION    [color=black,
+        fillcolor=cyan,
+        label=Industrialization,
+        style=filled,
+        tooltip="3 Workshops"];
+    MASS_PRODUCTION -> INDUSTRIALIZATION;
+    SCIENTIFIC_THEORY    [color=black,
+        fillcolor=cyan,
+        label="Scientific Theory",
+        style=filled,
+        tooltip=Direct];
+    BANKING -> SCIENTIFIC_THEORY;
+    GUNPOWDER -> SQUARE_RIGGING  [color=blue];
+    GUNPOWDER -> METAL_CASTING;
+    PRINTING -> MILITARY_SCIENCE;
+    SQUARE_RIGGING -> INDUSTRIALIZATION;
+    ASTRONOMY -> SCIENTIFIC_THEORY;
+    COLONIALISM  [color=black,
+        fillcolor=cyan,
+        label=Colonialism,
+        shape=octagon,
+        style=filled,
+        tooltip=Direct];
+    ASTRONOMY -> COLONIALISM     [color=red];
+    METAL_CASTING -> SIEGE_TACTICS   [color=blue];
+    BALLISTICS   [color=black,
+        fillcolor=cyan,
+        label=Ballistics,
+        style=filled,
+        tooltip="2 Forts"];
+    METAL_CASTING -> BALLISTICS;
+    ECONOMICS    [color=black,
+        fillcolor=cyan,
+        label=Economics,
+        style=filled,
+        tooltip="2 Banks"];
+    METAL_CASTING -> ECONOMICS;
+    SCORCHED_EARTH   [color=black,
+        fillcolor=cyan,
+        label="Scorched Earth",
+        shape=octagon,
+        style=filled,
+        tooltip="2 Field Cannons"];
+    METAL_CASTING -> SCORCHED_EARTH  [color=blue];
+    SIEGE_TACTICS -> BALLISTICS  [color=blue];
+    SIEGE_TACTICS -> MILITARY_SCIENCE;
+    STEAM_POWER  [color=black,
+        fillcolor=cyan,
+        label="Steam Power",
+        style=filled,
+        tooltip="2 Shipyards"];
+    INDUSTRIALIZATION -> STEAM_POWER;
+    FLIGHT   [color=black,
+        fillcolor=lightblue,
+        label=Flight,
+        style=filled,
+        tooltip="Industrial wonder"];
+    INDUSTRIALIZATION -> FLIGHT;
+    STEEL    [color=black,
+        fillcolor=lightblue,
+        label=Steel,
+        style=filled,
+        tooltip="Coal Mine"];
+    INDUSTRIALIZATION -> STEEL   [color=blue];
+    CLASS_STRUGGLE   [color=black,
+        fillcolor=lightblue,
+        label="Class Struggle",
+        shape=octagon,
+        style=filled,
+        tooltip="3 Factories"];
+    INDUSTRIALIZATION -> CLASS_STRUGGLE  [color=blue];
+    SANITATION   [color=black,
+        fillcolor=cyan,
+        label=Sanitation,
+        style=filled,
+        tooltip="2 Neighbourhoods"];
+    SCIENTIFIC_THEORY -> SANITATION;
+    SCIENTIFIC_THEORY -> ECONOMICS;
+    SCIENTIFIC_THEORY -> FLIGHT;
+    RIFLING  [color=black,
+        fillcolor=cyan,
+        label=Rifling,
+        style=filled,
+        tooltip="Niter Mine"];
+    BALLISTICS -> RIFLING;
+    MILITARY_SCIENCE -> RIFLING;
+    TOTALITARIANISM  [color=black,
+        fillcolor=lightblue,
+        label=Totalitarianism,
+        shape=octagon,
+        style=filled,
+        tooltip="3 Military Academies"];
+    MILITARY_SCIENCE -> TOTALITARIANISM  [color=blue];
+    ELECTRICITY  [color=black,
+        fillcolor=lightblue,
+        label=Electricity,
+        style=filled,
+        tooltip="3 Privateers"];
+    STEAM_POWER -> ELECTRICITY;
+    RADIO    [color=black,
+        fillcolor=lightblue,
+        label=Radio,
+        style=filled,
+        tooltip="National Park"];
+    STEAM_POWER -> RADIO;
+    CHEMISTRY    [color=black,
+        fillcolor=lightblue,
+        label=Chemistry,
+        style=filled,
+        tooltip="Research Agreement"];
+    SANITATION -> CHEMISTRY;
+    SUFFRAGE     [color=black,
+        fillcolor=lightblue,
+        label=Suffrage,
+        shape=octagon,
+        style=filled,
+        tooltip="4 sewers"];
+    SANITATION -> SUFFRAGE   [color=blue];
+    ECONOMICS -> FLIGHT  [color=blue];
+    REPLACEABLE_PARTS    [color=black,
+        fillcolor=lightblue,
+        label="Replaceable Parts",
+        style=filled,
+        tooltip="3 Musketman"];
+    ECONOMICS -> REPLACEABLE_PARTS;
+    CAPITALISM   [color=black,
+        fillcolor=lightblue,
+        label=Capitalism,
+        shape=octagon,
+        style=filled,
+        tooltip="3 Stock Exch"];
+    ECONOMICS -> CAPITALISM  [color=blue];
+    RIFLING -> STEEL;
+    FLIGHT -> RADIO;
+    COMBINED_ARMS    [color=black,
+        fillcolor=violet,
+        label="Combined Arms",
+        style=filled,
+        tooltip=Airstrip];
+    FLIGHT -> COMBINED_ARMS  [color=blue];
+    SYNTHETIC_MATERIALS  [color=black,
+        fillcolor=violet,
+        label="Synthetic Materials",
+        style=filled,
+        tooltip="2 Aerodromes"];
+    FLIGHT -> SYNTHETIC_MATERIALS    [color=blue];
+    RAPID_DEPLOYMENT     [color=black,
+        fillcolor=violet,
+        label="Rapid Deployment",
+        shape=octagon,
+        style=filled,
+        tooltip="Aerodrome continent"];
+    FLIGHT -> RAPID_DEPLOYMENT   [color=blue];
+    ADVANCED_BALLISTICS  [color=black,
+        fillcolor=violet,
+        label="Advanced Ballistics",
+        style=filled,
+        tooltip="2 Power Plants"];
+    REPLACEABLE_PARTS -> ADVANCED_BALLISTICS;
+    COMBUSTION   [color=black,
+        fillcolor=lightblue,
+        label=Combustion,
+        style=filled,
+        tooltip=Artifact];
+    STEEL -> COMBUSTION;
+    STEEL -> ADVANCED_BALLISTICS;
+    ELECTRICITY -> ADVANCED_BALLISTICS   [color=blue];
+    COMPUTERS    [color=black,
+        fillcolor=violet,
+        label=Computers,
+        style=filled,
+        tooltip="8 slot"];
+    ELECTRICITY -> COMPUTERS;
+    ADVANCED_FLIGHT  [color=black,
+        fillcolor=violet,
+        label="Advanced Flight",
+        style=filled,
+        tooltip="3 Biplanes"];
+    RADIO -> ADVANCED_FLIGHT;
+    ROCKETRY     [color=black,
+        fillcolor=violet,
+        label=Rocketry,
+        style=filled,
+        tooltip="No Boost"];
+    RADIO -> ROCKETRY;
+    RADIO -> COMPUTERS;
+    NANOTECHNOLOGY   [color=black,
+        fillcolor=beige,
+        label=Nanotechnology,
+        style=filled,
+        tooltip="Aluminium Mine"];
+    RADIO -> NANOTECHNOLOGY  [color=blue];
+    MASS_MEDIA   [color=black,
+        fillcolor=lightblue,
+        label="Mass Media",
+        shape=octagon,
+        style=filled,
+        tooltip=Direct];
+    RADIO -> MASS_MEDIA  [color=red];
+    CHEMISTRY -> ROCKETRY;
+    NUCLEAR_PROGRAM  [color=black,
+        fillcolor=lightblue,
+        label=" Nuclear Program",
+        shape=octagon,
+        style=filled,
+        tooltip="Research Lab"];
+    CHEMISTRY -> NUCLEAR_PROGRAM     [color=blue];
+    COMBUSTION -> COMBINED_ARMS;
+    PLASTICS     [color=black,
+        fillcolor=violet,
+        label=Plastics,
+        style=filled,
+        tooltip="Oil Well"];
+    COMBUSTION -> PLASTICS;
+    SATELLITES   [color=black,
+        fillcolor=beige,
+        label=Satellites,
+        style=filled,
+        tooltip="No Boost"];
+    ADVANCED_FLIGHT -> SATELLITES;
+    GLOBALIZATION    [color=black,
+        fillcolor=beige,
+        label=Globalization,
+        shape=octagon,
+        style=filled,
+        tooltip="3 Airports"];
+    ADVANCED_FLIGHT -> GLOBALIZATION     [color=blue];
+    ROCKETRY -> SATELLITES;
+    GUIDANCE_SYSTEMS     [color=black,
+        fillcolor=beige,
+        label="Guidance Systems",
+        style=filled,
+        tooltip="Kill a Fighter"];
+    ROCKETRY -> GUIDANCE_SYSTEMS;
+    SPACE_RACE   [color=black,
+        fillcolor=violet,
+        label="Space Race",
+        shape=octagon,
+        style=filled,
+        tooltip=Spaceport];
+    ROCKETRY -> SPACE_RACE   [color=blue];
+    NUCLEAR_FISSION  [color=black,
+        fillcolor=violet,
+        label="Nuclear Fission",
+        style=filled,
+        tooltip="No Boost"];
+    ADVANCED_BALLISTICS -> NUCLEAR_FISSION;
+    ADVANCED_BALLISTICS -> GUIDANCE_SYSTEMS;
+    COMBINED_ARMS -> NUCLEAR_FISSION;
+    PLASTICS -> SYNTHETIC_MATERIALS;
+    TELECOMMUNICATIONS   [color=black,
+        fillcolor=beige,
+        label=Telecommunications,
+        style=filled,
+        tooltip="2 Broadcast"];
+    COMPUTERS -> TELECOMMUNICATIONS;
+    ROBOTICS     [color=black,
+        fillcolor=beige,
+        label=Robotics,
+        style=filled,
+        tooltip=Direct];
+    COMPUTERS -> ROBOTICS;
+    LASERS   [color=black,
+        fillcolor=beige,
+        label=Lasers,
+        style=filled,
+        tooltip="No Boost"];
+    NUCLEAR_FISSION -> LASERS;
+    COLD_WAR     [color=black,
+        fillcolor=violet,
+        label="Cold War",
+        shape=octagon,
+        style=filled,
+        tooltip=Direct];
+    NUCLEAR_FISSION -> COLD_WAR  [color=red];
+    COMPOSITES   [color=black,
+        fillcolor=beige,
+        label=Composites,
+        style=filled,
+        tooltip="3 Tanks"];
+    SYNTHETIC_MATERIALS -> COMPOSITES;
+    STEALTH_TECHNOLOGY   [color=black,
+        fillcolor=beige,
+        label="Stealth Technology",
+        style=filled,
+        tooltip="No Boost"];
+    SYNTHETIC_MATERIALS -> STEALTH_TECHNOLOGY;
+    SOCIAL_MEDIA     [color=black,
+        fillcolor=beige,
+        label="Social Media",
+        shape=octagon,
+        style=filled,
+        tooltip=Direct];
+    TELECOMMUNICATIONS -> SOCIAL_MEDIA   [color=red];
+    NUCLEAR_FUSION   [color=black,
+        fillcolor=beige,
+        label="Nuclear Fusion",
+        style=filled,
+        tooltip="No Boost"];
+    LASERS -> NUCLEAR_FUSION;
+    COMPOSITES -> NANOTECHNOLOGY;
+    CODE_OF_LAWS     [color=black,
+        fillcolor=pink,
+        label="Code of Laws",
+        shape=octagon,
+        style=filled,
+        tooltip="No Boost"];
+    CRAFTSMANSHIP    [color=black,
+        fillcolor=pink,
+        label=Craftsmanship,
+        shape=octagon,
+        style=filled,
+        tooltip="Improve 3"];
+    CODE_OF_LAWS -> CRAFTSMANSHIP;
+    FOREIGN_TRADE    [color=black,
+        fillcolor=pink,
+        label="Foreign Trade",
+        shape=octagon,
+        style=filled,
+        tooltip="Discover Continent"];
+    CODE_OF_LAWS -> FOREIGN_TRADE;
+    MILITARY_TRADITION   [color=black,
+        fillcolor=pink,
+        label="Military Tradition",
+        shape=octagon,
+        style=filled,
+        tooltip="Clear Barbarian"];
+    CRAFTSMANSHIP -> MILITARY_TRADITION;
+    CRAFTSMANSHIP -> STATE_WORKFORCE;
+    FOREIGN_TRADE -> CURRENCY    [color=blue];
+    EARLY_EMPIRE     [color=black,
+        fillcolor=pink,
+        label="Early Empire",
+        shape=octagon,
+        style=filled,
+        tooltip="6 population total"];
+    FOREIGN_TRADE -> EARLY_EMPIRE;
+    MYSTICISM    [color=black,
+        fillcolor=pink,
+        label=Mysticism,
+        shape=octagon,
+        style=filled,
+        tooltip=Pantheon];
+    FOREIGN_TRADE -> MYSTICISM;
+    MILITARY_TRADITION -> MILITARY_TRAINING;
+    STATE_WORKFORCE -> GAMES_RECREATION;
+    POLITICAL_PHILOSOPHY     [color=black,
+        fillcolor=orange,
+        label="Political Philosophy",
+        shape=octagon,
+        style=filled,
+        tooltip="3 city-states"];
+    STATE_WORKFORCE -> POLITICAL_PHILOSOPHY;
+    EARLY_EMPIRE -> POLITICAL_PHILOSOPHY;
+    EARLY_EMPIRE -> DRAMA_POETRY;
+    MYSTICISM -> DRAMA_POETRY    [color=blue];
+    MYSTICISM -> THEOLOGY;
+    GAMES_RECREATION -> MILITARY_TRAINING;
+    DEFENSIVE_TACTICS    [color=black,
+        fillcolor=orange,
+        label="Defensive Tactics",
+        shape=octagon,
+        style=filled,
+        tooltip="Target of War"];
+    GAMES_RECREATION -> DEFENSIVE_TACTICS;
+    POLITICAL_PHILOSOPHY -> DEFENSIVE_TACTICS;
+    POLITICAL_PHILOSOPHY -> RECORDED_HISTORY;
+    DRAMA_POETRY -> MATHEMATICS  [color=blue];
+    DRAMA_POETRY -> RECORDED_HISTORY;
+    DRAMA_POETRY -> THEOLOGY;
+    HUMANISM     [color=black,
+        fillcolor=green1,
+        label=Humanism,
+        shape=octagon,
+        style=filled,
+        tooltip="Great Artist"];
+    DRAMA_POETRY -> HUMANISM     [color=blue];
+    MERCENARIES  [color=black,
+        fillcolor=yellow,
+        label=Mercenaries,
+        shape=octagon,
+        style=filled,
+        tooltip="8 land combat units"];
+    MILITARY_TRAINING -> MERCENARIES;
+    DEFENSIVE_TACTICS -> NAVAL_TRADITION;
+    FEUDALISM    [color=black,
+        fillcolor=yellow,
+        label=Feudalism,
+        shape=octagon,
+        style=filled,
+        tooltip="6 farms"];
+    DEFENSIVE_TACTICS -> FEUDALISM;
+    CIVIL_SERVICE    [color=black,
+        fillcolor=yellow,
+        label="Civil Service",
+        shape=octagon,
+        style=filled,
+        tooltip="10 population city"];
+    DEFENSIVE_TACTICS -> CIVIL_SERVICE;
+    RECORDED_HISTORY -> CIVIL_SERVICE;
+    DIVINE_RIGHT     [color=black,
+        fillcolor=yellow,
+        label="Divine Right",
+        shape=octagon,
+        style=filled,
+        tooltip="2 Temples"];
+    THEOLOGY -> DIVINE_RIGHT;
+    FEUDALISM -> STIRRUPS    [color=red];
+    FEUDALISM -> MERCENARIES;
+    FEUDALISM -> MEDIEVAL_FAIRES;
+    FEUDALISM -> GUILDS;
+    CIVIL_SERVICE -> GUILDS;
+    CIVIL_SERVICE -> DIVINE_RIGHT;
+    MERCENARIES -> EXPLORATION;
+    MEDIEVAL_FAIRES -> EXPLORATION;
+    MEDIEVAL_FAIRES -> HUMANISM;
+    GUILDS -> BANKING    [color=red];
+    DIPLOMATIC_SERVICE   [color=black,
+        fillcolor=green1,
+        label="Diplomatic Service",
+        shape=octagon,
+        style=filled,
+        tooltip=Alliance];
+    GUILDS -> DIPLOMATIC_SERVICE;
+    REFORMED_CHURCH  [color=black,
+        fillcolor=green1,
+        label="Reformed Church",
+        shape=octagon,
+        style=filled,
+        tooltip="6 cities following your religion"];
+    GUILDS -> REFORMED_CHURCH;
+    DIVINE_RIGHT -> CASTLES  [color=blue];
+    DIVINE_RIGHT -> REFORMED_CHURCH;
+    EXPLORATION -> CASTLES   [color=blue];
+    HUMANISM -> MERCANTILISM;
+    THE_ENLIGHTENMENT    [color=black,
+        fillcolor=green1,
+        label="The Enlightenment",
+        shape=octagon,
+        style=filled,
+        tooltip="3 Great People"];
+    HUMANISM -> THE_ENLIGHTENMENT;
+    DIPLOMATIC_SERVICE -> THE_ENLIGHTENMENT;
+    MERCANTILISM -> ELECTRICITY  [color=blue];
+    MERCANTILISM -> COLONIALISM;
+    CIVIL_ENGINEERING    [color=black,
+        fillcolor=cyan,
+        label="Civil Engineering",
+        shape=octagon,
+        style=filled,
+        tooltip="7 Districts"];
+    MERCANTILISM -> CIVIL_ENGINEERING;
+    THE_ENLIGHTENMENT -> SCIENTIFIC_THEORY   [color=red];
+    NATIONALISM  [color=black,
+        fillcolor=cyan,
+        label=Nationalism,
+        shape=octagon,
+        style=filled,
+        tooltip="Casus Belli"];
+    THE_ENLIGHTENMENT -> NATIONALISM;
+    OPERA_BALLET     [color=black,
+        fillcolor=cyan,
+        label="Opera and Ballet",
+        shape=octagon,
+        style=filled,
+        tooltip="Art Museum"];
+    THE_ENLIGHTENMENT -> OPERA_BALLET;
+    NATURAL_HISTORY  [color=black,
+        fillcolor=cyan,
+        label="Natural History",
+        shape=octagon,
+        style=filled,
+        tooltip="Arch Museum"];
+    COLONIALISM -> NATURAL_HISTORY;
+    URBANIZATION     [color=black,
+        fillcolor=cyan,
+        label=Urbanization,
+        shape=octagon,
+        style=filled,
+        tooltip="15 population city"];
+    CIVIL_ENGINEERING -> URBANIZATION;
+    NATIONALISM -> SCORCHED_EARTH;
+    NATIONALISM -> URBANIZATION;
+    NATURAL_HISTORY -> COMBUSTION    [color=blue];
+    CONSERVATION     [color=black,
+        fillcolor=lightblue,
+        label=Conservation,
+        shape=octagon,
+        style=filled,
+        tooltip="Breathtaking Neighbourhood"];
+    NATURAL_HISTORY -> CONSERVATION;
+    URBANIZATION -> SANITATION   [color=blue];
+    URBANIZATION -> CONSERVATION;
+    URBANIZATION -> MASS_MEDIA;
+    MOBILIZATION     [color=black,
+        fillcolor=lightblue,
+        label=Mobilization,
+        shape=octagon,
+        style=filled,
+        tooltip="3 Corps"];
+    URBANIZATION -> MOBILIZATION;
+    CONSERVATION -> RADIO    [color=blue];
+    CULTURAL_HERITAGE    [color=black,
+        fillcolor=violet,
+        label="Cultural Heritage",
+        shape=octagon,
+        style=filled,
+        tooltip="Themed Museum"];
+    CONSERVATION -> CULTURAL_HERITAGE;
+    MASS_MEDIA -> CAPITALISM;
+    IDEOLOGY     [color=black,
+        fillcolor=lightblue,
+        label=Ideology,
+        shape=octagon,
+        style=filled,
+        tooltip="No Boost"];
+    MASS_MEDIA -> IDEOLOGY;
+    MOBILIZATION -> IDEOLOGY;
+    IDEOLOGY -> NUCLEAR_PROGRAM;
+    IDEOLOGY -> SUFFRAGE;
+    IDEOLOGY -> TOTALITARIANISM;
+    IDEOLOGY -> CLASS_STRUGGLE;
+    IDEOLOGY -> COLD_WAR;
+    PROFESSIONAL_SPORTS  [color=black,
+        fillcolor=violet,
+        label="Professional Sports",
+        shape=octagon,
+        style=filled,
+        tooltip="4 Entertainment"];
+    IDEOLOGY -> PROFESSIONAL_SPORTS;
+    SUFFRAGE -> COMPUTERS    [color=blue];
+    TOTALITARIANISM -> COMPUTERS     [color=blue];
+    CLASS_STRUGGLE -> COMPUTERS  [color=blue];
+    COLD_WAR -> RAPID_DEPLOYMENT;
+    COLD_WAR -> SPACE_RACE;
+    PROFESSIONAL_SPORTS -> SOCIAL_MEDIA;
+    RAPID_DEPLOYMENT -> GLOBALIZATION;
+    SPACE_RACE -> GLOBALIZATION;
+    SPACE_RACE -> SOCIAL_MEDIA;
+    GLOBALIZATION -> ROBOTICS   [color=red];
+}
