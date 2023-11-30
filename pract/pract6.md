@@ -31,3 +31,40 @@
 ## Задача 5
 
 Выбрать программный проект на Python (лучше свой собственный), состоящий из нескольких файлов. Получить для него документацию в Doxygen. Должны быть сформированы: руководство пользователя и руководство программиста. Руководство программиста должно содержать описание API, полученное с использованием расширения autodoc. Для каждого из модулей должна присутствовать диаграмма наследования и подробное описание классов и функций (назначение, описание параметров и возвращаемых значений), извлеченных из docstring. Прислать pdf-файл с документацией, в котором будет указано ваше авторство и весь авторский текст приведен на русском языке.
+
+## Полезные ссылки
+
+**LaTeX**
+
+http://grammarware.net/text/syutkin/TextInLaTeX.pdf
+https://grammarware.net/text/syutkin/MathInLaTeX.pdf
+https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes
+https://www.overleaf.com/learn/latex/XeLaTeX
+
+**Noweb**
+
+https://www.pbr-book.org/3ed-2018/Introduction/Literate_Programming
+https://www.cs.tufts.edu/~nr/noweb/
+
+**Doxygen**
+
+https://www.doxygen.nl/index.html
+https://habr.com/ru/post/252101/
+
+
+**Sphinx**
+
+https://www.sphinx-doc.org/en/master/
+https://sphinx-ru.readthedocs.io/ru/latest/index.html
+https://breathe.readthedocs.io/en/latest/
+
+
+**PlantUML**
+
+https://plantuml.com/ru/
+https://pdf.plantuml.net/PlantUML_Language_Reference_Guide_ru.pdf
+
+**Mermaid**
+
+https://mermaid.js.org/
+https://mermaid.live/edit
