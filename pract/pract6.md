@@ -47,27 +47,32 @@ https://www.overleaf.com/learn/latex/XeLaTeX
 **Noweb**
 
 https://www.pbr-book.org/3ed-2018/Introduction/Literate_Programming
+
 https://www.cs.tufts.edu/~nr/noweb/
 
 **Doxygen**
 
 https://www.doxygen.nl/index.html
-https://habr.com/ru/post/252101/
 
+https://habr.com/ru/post/252101/
 
 **Sphinx**
 
 https://www.sphinx-doc.org/en/master/
+
 https://sphinx-ru.readthedocs.io/ru/latest/index.html
+
 https://breathe.readthedocs.io/en/latest/
 
 
 **PlantUML**
 
 https://plantuml.com/ru/
+
 https://pdf.plantuml.net/PlantUML_Language_Reference_Guide_ru.pdf
 
 **Mermaid**
 
 https://mermaid.js.org/
+
 https://mermaid.live/edit
