@@ -49,6 +49,8 @@ enableMenu: false
 
 ## Не только для DevOps
 
+Чтобы понимать такие шутки: https://xkcd.com/149/
+
 Из вакансий для разработчиков:
 
 <div style="font-size:70%">
