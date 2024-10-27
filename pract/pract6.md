@@ -1,78 +1,96 @@
-# Практическое занятие №6. Генераторы документации
+# Практическое задание №6. Системы автоматизации сборки
 
 П.Н. Советов, РТУ МИРЭА
 
+Работа с утилитой Make.
+
+Изучить основы языка утилиты make. Распаковать в созданный каталог [make.zip](make.zip), если у вас в в системе нет make.
+
+Создать приведенный ниже Makefile и проверить его работоспособность.
+
+```
+dress: trousers shoes jacket
+    @echo "All done. Let's go outside!"
+
+jacket: pullover
+    @echo "Putting on jacket."
+
+pullover: shirt
+    @echo "Putting on pullover."
+
+shirt:
+    @echo "Putting on shirt."
+
+trousers: underpants
+    @echo "Putting on trousers."
+
+underpants:
+    @echo "Putting on underpants."
+
+shoes: socks
+    @echo "Putting on shoes."
+
+socks: pullover
+    @echo "Putting on socks."
+```
+
+Визуализировать файл [civgraph.txt](civgraph.txt).
+
+
 ## Задача 1
 
-Реализовать с помощью математического языка LaTeX нижеприведенную формулу:
+Написать программу на Питоне, которая транслирует граф зависимостей civgraph в makefile в духе примера выше. Для мало знакомых с Питоном используется упрощенный вариант civgraph: [civgraph.json](civgraph.json).
 
-![](images/formula.png)
+Пример:
 
-Прислать код на LaTeX и картинку-результат, где, помимо формулы, будет указано ФИО студента.
+```
+> make mathematics
+mining
+bronze_working
+sailing
+astrology
+celestial_navigation
+pottery
+writing
+code_of_laws
+foreign_trade
+currency
+irrigation
+masonry
+early_empire
+mysticism
+drama_poetry
+mathematics
+```
 
 ## Задача 2
 
-На языке PlantUML реализовать диаграмму на рисунке ниже. Прислать текст на PlantUML и картинку-результат, в которой ФИО студента заменены Вашими собственными.
-Обратите внимание на оформление, желательно придерживаться именно его, то есть без стандартного желтого цвета и проч. Чтобы много не писать используйте псевдонимы с помощью ключевого слова "as".
+Реализовать вариант трансляции, при котором повторный запуск make не выводит для civgraph на экран уже выполненные "задачи".
 
-Используйте [онлайн-редактор](https://plantuml-editor.kkeisuke.com/).
-
-![](images/plantuml.png)
 
 ## Задача 3
 
-Описать какой-либо алгоритм сортировки с помощью noweb. Язык реализации не важен. Прислать nw-файл, pdf-файл и файл с исходным кодом. В начале pdf-файла должно быть указано ваше авторство. Добавьте, например, где-то в своем тексте сноску: \footnote{Разработал Фамилия И.О.}
-Дополнительное задание: сравните "грамотное программирование" с Jupyter-блокнотами (см. https://github.com/norvig/pytudes/blob/master/ipynb/BASIC.ipynb), опишите сходные черты, различия, перспективы того и другого.
+Добавить цель clean, не забыв и про "животное".
 
 ## Задача 4
 
-Выбрать программный проект из нескольких файлов (лучше свой собственный), состоящий из нескольких файлов. Получить для него документацию в Doxygen. Язык реализации не важен. Должны быть сгенерированы: описания классов и функций, диаграммы наследования, диаграммы графа вызовов функции. Прислать pdf-файл с документацией (см. latex/make.bat), в котором будет указано ваше авторство. Необходимо добиться корректного вывода русского текста.
- 
-## Задача 5
+Написать makefile для следующего скрипта сборки:
 
-Выбрать программный проект на Python (лучше свой собственный), состоящий из нескольких файлов. Получить для него документацию в Doxygen. Должны быть сформированы: руководство пользователя и руководство программиста. Руководство программиста должно содержать описание API, полученное с использованием расширения autodoc. Для каждого из модулей должна присутствовать диаграмма наследования и подробное описание классов и функций (назначение, описание параметров и возвращаемых значений), извлеченных из docstring. Прислать pdf-файл с документацией, в котором будет указано ваше авторство и весь авторский текст приведен на русском языке.
+```
+gcc prog.c data.c -o prog
+dir /B > files.lst
+7z a distr.zip *.*
+```
+
+Вместо gcc можно использовать другой компилятор командной строки, но на вход ему должны подаваться два модуля: prog и data.
+Если используете не Windows, то исправьте вызовы команд на их эквиваленты из вашей ОС.
+В makefile должны быть, как минимум, следующие задачи: all, clean, archive.
+Обязательно покажите на примере, что уже сделанные подзадачи у вас не перестраиваются.
 
 ## Полезные ссылки
 
-**LaTeX**
+Описание (рус.): https://unix1.jinr.ru/faq_guide/programming/make/make.html
 
-http://grammarware.net/text/syutkin/TextInLaTeX.pdf
+Шпаргалка: https://devhints.io/makefile
 
-https://grammarware.net/text/syutkin/MathInLaTeX.pdf
-
-https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes
-
-https://www.overleaf.com/learn/latex/XeLaTeX
-
-**Noweb**
-
-https://www.pbr-book.org/3ed-2018/Introduction/Literate_Programming
-
-https://www.cs.tufts.edu/~nr/noweb/
-
-**Doxygen**
-
-https://www.doxygen.nl/index.html
-
-https://habr.com/ru/post/252101/
-
-**Sphinx**
-
-https://www.sphinx-doc.org/en/master/
-
-https://sphinx-ru.readthedocs.io/ru/latest/index.html
-
-https://breathe.readthedocs.io/en/latest/
-
-
-**PlantUML**
-
-https://plantuml.com/ru/
-
-https://pdf.plantuml.net/PlantUML_Language_Reference_Guide_ru.pdf
-
-**Mermaid**
-
-https://mermaid.js.org/
-
-https://mermaid.live/edit
+Топологическая сортировка: https://ru.wikipedia.org/wiki/Топологическая_сортировка
