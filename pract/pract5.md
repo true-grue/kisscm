@@ -1,96 +1,107 @@
-# Практическое задание №5. Системы контроля версий
+# Практическое занятие №5. Вопросы виртуализации
 
 П.Н. Советов, РТУ МИРЭА
 
-Работа с Git.
-
 ## Задача 1
 
-На сайте https://onlywei.github.io/explain-git-with-d3 или http://git-school.github.io/visualizing-git/ (цвета могут отличаться, есть команды undo/redo) с помощью команд эмулятора git получить следующее состояние проекта (сливаем master с first, перебазируем second на master): см. картинку ниже. Прислать свою картинку.
+Исследование виртуальной стековой машины CPython.
 
-![](images/git.png)
+Изучите возможности просмотра байткода ВМ CPython.
+
+```
+import dis
+
+def foo(x):
+    while x:
+        x -= 1
+    return x + 1
+
+print(dis.dis(foo))
+```
+
+Опишите по шагам, что делает каждая из следующих команд (приведите эквивалентное выражение на Python):
+
+ 11           0 LOAD_FAST                0 (x)
+              2 LOAD_CONST               1 (10)
+              4 BINARY_MULTIPLY
+              6 LOAD_CONST               2 (42)
+              8 BINARY_ADD
+             10 RETURN_VALUE
+
 
 ## Задача 2
 
-Создать локальный git-репозиторий. Задать свои имя и почту (далее – coder1). Разместить файл prog.py с какими-нибудь данными. Прислать в текстовом виде диалог с git.
+Что делает следующий байткод (опишите шаги его работы)? Это известная функция, назовите ее.
+
+```
+  5           0 LOAD_CONST               1 (1)
+              2 STORE_FAST               1 (r)
+
+  6     >>    4 LOAD_FAST                0 (n)
+              6 LOAD_CONST               1 (1)
+              8 COMPARE_OP               4 (>)
+             10 POP_JUMP_IF_FALSE       30
+
+  7          12 LOAD_FAST                1 (r)
+             14 LOAD_FAST                0 (n)
+             16 INPLACE_MULTIPLY
+             18 STORE_FAST               1 (r)
+
+  8          20 LOAD_FAST                0 (n)
+             22 LOAD_CONST               1 (1)
+             24 INPLACE_SUBTRACT
+             26 STORE_FAST               0 (n)
+             28 JUMP_ABSOLUTE            4
+
+  9     >>   30 LOAD_FAST                1 (r)
+             32 RETURN_VALUE
+```
 
 ## Задача 3
 
-Создать рядом с локальным репозиторием bare-репозиторий с именем server. Загрузить туда содержимое локального репозитория. Команда git remote -v должна выдать информацию о server! Синхронизировать coder1 с server.
-
-Клонировать репозиторий server в отдельной папке. Задать для работы с ним произвольные данные пользователя и почты (далее – coder2). Добавить файл readme.md с описанием программы. Обновить сервер.
-
-Coder1 получает актуальные данные с сервера. Добавляет в readme в раздел об авторах свою информацию и обновляет сервер.
-
-Coder2 добавляет в readme в раздел об авторах свою информацию и решает вопрос с конфликтами.
-
-Прислать список набранных команд и содержимое git log.
-
-Пример лога коммитов:
-
-```
-*   commit a457d748f0dab75b4c642e964172887de3ef4e3e
-|\  Merge: 48ce283 d731ba8
-| | Author: Coder 2 <coder2@corp.com>
-| | Date:   Sun Oct 11 11:27:09 2020 +0300
-| | 
-| |     readme fix
-| | 
-| * commit d731ba84014d603384cc3287a8ea9062dbb92303
-| | Author: Coder 1 <coder1@corp.com>
-| | Date:   Sun Oct 11 11:22:52 2020 +0300
-| | 
-| |     coder 1 info
-| | 
-* | commit 48ce28336e6b3b983cbd6323500af8ec598626f1
-|/  Author: Coder 2 <coder2@corp.com>
-|   Date:   Sun Oct 11 11:24:00 2020 +0300
-|   
-|       coder 2 info
-| 
-* commit ba9dfe9cb24316694808a347e8c36f8383d81bbe
-| Author: Coder 2 <coder2@corp.com>
-| Date:   Sun Oct 11 11:21:26 2020 +0300
-| 
-|     docs
-| 
-* commit 227d84c89e60e09eebbce6c0b94b41004a4541a4
-  Author: Coder 1 <coder1@corp.com>
-  Date:   Sun Oct 11 11:11:46 2020 +0300
-  
-      first commit
-```
+Приведите результаты из задач 1 и 2 для виртуальной машины JVM (Java) или .Net (C#).
 
 ## Задача 4
 
-Написать программу на Питоне (или другом ЯП), которая выводит список содержимого всех объектов репозитория. Воспользоваться командой "git cat-file -p". Идеальное решение – не использовать иных сторонних команд и библиотек для работы с git.
+Работа с qemu. Скачать и установить ISO-образ Alpine Linux для виртуальных машин с официального сайта.
+Создать с помощью qemu образ жесткого диска (опция -f qcow2). Объем диска 500 Мб.
+Запустить Alpine Linux с CD-ROM.
+Установить систему на sda. Изменить motd.
+Загрузиться уже с sda.
+Прислать полный список команд для установки и загрузки, а также скриншот с motd, где фигурируют ваши имя и фамилия.
+
+## Задача 5
+
+(после разбора на семинаре и написания у доски базовой части эмулятора древней игровой приставки CHIP-8)
+
+1. Реализовать вывод на экран.
+2. Добиться запуска Тетриса.
+3. Реализовать ввод с клавиатуры.
+4. Добиться успешной работы всех приложений.
+
+[Архив эмулятора CHIP-8](chip.zip)
 
 ## Полезные ссылки
 
-Git
+Compiler Explorer: https://godbolt.org/
 
-Учебник (рус.): https://git-scm.com/book/ru/v2
+Байткод CPython: https://docs.python.org/3/library/dis.html
 
-Шпаргалка (рус.): https://training.github.com/downloads/ru/github-git-cheat-sheet/
+QEMU для Windows: https://www.qemu.org/download/#windows
+http://sovietov.com/tmp/mqemu.zip
 
-Официальная документация: https://git-scm.com/docs
+Документация по QEMU: https://www.qemu.org/docs/master/system/index.html
 
-Эксцентричный доклад Л. Торвальдса о Git: https://www.youtube.com/watch?v=4XpnKHJAok8
+Старая документация по QEMU (рус.): https://www.opennet.ru/docs/RUS/qemu_doc/
 
-Дерево Меркла: http://cryptowiki.net/index.php?title=Дерево_Merkle
+Образы Alpine Linux: https://alpinelinux.org/downloads/
 
-Git for Windows: https://git-scm.com/download/win
+Документация по игровому компьютеру CHIP-8: http://devernay.free.fr/hacks/chip8/C8TECH10.HTM
 
-Репозиторий chibicc: https://github.com/rui314/chibicc.git
+Учебник по созданию миниатюрной ОС: https://www.cs.bham.ac.uk/~exr/lectures/opsys/10_11/lectures/os-dev.pdf
 
-Игра по git: https://learngitbranching.js.org/?locale=ru_RU
+Nasm: https://nasm.us/
 
-SHA-1
+Прерывания BIOS: http://www.ctyme.com/intr/int.htm
 
-Описание алгоритма: https://ru.wikipedia.org/wiki/SHA-1
-
-Вероятность хеш-коллизии: https://preshing.com/20110504/hash-collision-probabilities/
-
-https://ru.m.wikipedia.org/wiki/Парадокс_дней_рождения
-
-https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html
+Игры в загрузочном секторе: https://github.com/nanochess/Invaders

@@ -1,107 +1,78 @@
-# Практическое занятие №7. Вопросы виртуализации
+# Практическое занятие №7. Генераторы документации
 
 П.Н. Советов, РТУ МИРЭА
 
 ## Задача 1
 
-Исследование виртуальной стековой машины CPython.
+Реализовать с помощью математического языка LaTeX нижеприведенную формулу:
 
-Изучите возможности просмотра байткода ВМ CPython.
+![](images/formula.png)
 
-```
-import dis
-
-def foo(x):
-    while x:
-        x -= 1
-    return x + 1
-
-print(dis.dis(foo))
-```
-
-Опишите по шагам, что делает каждая из следующих команд (приведите эквивалентное выражение на Python):
-
- 11           0 LOAD_FAST                0 (x)
-              2 LOAD_CONST               1 (10)
-              4 BINARY_MULTIPLY
-              6 LOAD_CONST               2 (42)
-              8 BINARY_ADD
-             10 RETURN_VALUE
-
+Прислать код на LaTeX и картинку-результат, где, помимо формулы, будет указано ФИО студента.
 
 ## Задача 2
 
-Что делает следующий байткод (опишите шаги его работы)? Это известная функция, назовите ее.
+На языке PlantUML реализовать диаграмму на рисунке ниже. Прислать текст на PlantUML и картинку-результат, в которой ФИО студента заменены Вашими собственными.
+Обратите внимание на оформление, желательно придерживаться именно его, то есть без стандартного желтого цвета и проч. Чтобы много не писать используйте псевдонимы с помощью ключевого слова "as".
 
-```
-  5           0 LOAD_CONST               1 (1)
-              2 STORE_FAST               1 (r)
+Используйте [онлайн-редактор](https://plantuml-editor.kkeisuke.com/).
 
-  6     >>    4 LOAD_FAST                0 (n)
-              6 LOAD_CONST               1 (1)
-              8 COMPARE_OP               4 (>)
-             10 POP_JUMP_IF_FALSE       30
-
-  7          12 LOAD_FAST                1 (r)
-             14 LOAD_FAST                0 (n)
-             16 INPLACE_MULTIPLY
-             18 STORE_FAST               1 (r)
-
-  8          20 LOAD_FAST                0 (n)
-             22 LOAD_CONST               1 (1)
-             24 INPLACE_SUBTRACT
-             26 STORE_FAST               0 (n)
-             28 JUMP_ABSOLUTE            4
-
-  9     >>   30 LOAD_FAST                1 (r)
-             32 RETURN_VALUE
-```
+![](images/plantuml.png)
 
 ## Задача 3
 
-Приведите результаты из задач 1 и 2 для виртуальной машины JVM (Java) или .Net (C#).
+Описать какой-либо алгоритм сортировки с помощью noweb. Язык реализации не важен. Прислать nw-файл, pdf-файл и файл с исходным кодом. В начале pdf-файла должно быть указано ваше авторство. Добавьте, например, где-то в своем тексте сноску: \footnote{Разработал Фамилия И.О.}
+Дополнительное задание: сравните "грамотное программирование" с Jupyter-блокнотами (см. https://github.com/norvig/pytudes/blob/master/ipynb/BASIC.ipynb), опишите сходные черты, различия, перспективы того и другого.
 
 ## Задача 4
 
-Работа с qemu. Скачать и установить ISO-образ Alpine Linux для виртуальных машин с официального сайта.
-Создать с помощью qemu образ жесткого диска (опция -f qcow2). Объем диска 500 Мб.
-Запустить Alpine Linux с CD-ROM.
-Установить систему на sda. Изменить motd.
-Загрузиться уже с sda.
-Прислать полный список команд для установки и загрузки, а также скриншот с motd, где фигурируют ваши имя и фамилия.
-
+Выбрать программный проект из нескольких файлов (лучше свой собственный), состоящий из нескольких файлов. Получить для него документацию в Doxygen. Язык реализации не важен. Должны быть сгенерированы: описания классов и функций, диаграммы наследования, диаграммы графа вызовов функции. Прислать pdf-файл с документацией (см. latex/make.bat), в котором будет указано ваше авторство. Необходимо добиться корректного вывода русского текста.
+ 
 ## Задача 5
 
-(после разбора на семинаре и написания у доски базовой части эмулятора древней игровой приставки CHIP-8)
-
-1. Реализовать вывод на экран.
-2. Добиться запуска Тетриса.
-3. Реализовать ввод с клавиатуры.
-4. Добиться успешной работы всех приложений.
-
-[Архив эмулятора CHIP-8](chip.zip)
+Выбрать программный проект на Python (лучше свой собственный), состоящий из нескольких файлов. Получить для него документацию в Doxygen. Должны быть сформированы: руководство пользователя и руководство программиста. Руководство программиста должно содержать описание API, полученное с использованием расширения autodoc. Для каждого из модулей должна присутствовать диаграмма наследования и подробное описание классов и функций (назначение, описание параметров и возвращаемых значений), извлеченных из docstring. Прислать pdf-файл с документацией, в котором будет указано ваше авторство и весь авторский текст приведен на русском языке.
 
 ## Полезные ссылки
 
-Compiler Explorer: https://godbolt.org/
+**LaTeX**
 
-Байткод CPython: https://docs.python.org/3/library/dis.html
+http://grammarware.net/text/syutkin/TextInLaTeX.pdf
 
-QEMU для Windows: https://www.qemu.org/download/#windows
-http://sovietov.com/tmp/mqemu.zip
+https://grammarware.net/text/syutkin/MathInLaTeX.pdf
 
-Документация по QEMU: https://www.qemu.org/docs/master/system/index.html
+https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes
 
-Старая документация по QEMU (рус.): https://www.opennet.ru/docs/RUS/qemu_doc/
+https://www.overleaf.com/learn/latex/XeLaTeX
 
-Образы Alpine Linux: https://alpinelinux.org/downloads/
+**Noweb**
 
-Документация по игровому компьютеру CHIP-8: http://devernay.free.fr/hacks/chip8/C8TECH10.HTM
+https://www.pbr-book.org/3ed-2018/Introduction/Literate_Programming
 
-Учебник по созданию миниатюрной ОС: https://www.cs.bham.ac.uk/~exr/lectures/opsys/10_11/lectures/os-dev.pdf
+https://www.cs.tufts.edu/~nr/noweb/
 
-Nasm: https://nasm.us/
+**Doxygen**
 
-Прерывания BIOS: http://www.ctyme.com/intr/int.htm
+https://www.doxygen.nl/index.html
 
-Игры в загрузочном секторе: https://github.com/nanochess/Invaders
+https://habr.com/ru/post/252101/
+
+**Sphinx**
+
+https://www.sphinx-doc.org/en/master/
+
+https://sphinx-ru.readthedocs.io/ru/latest/index.html
+
+https://breathe.readthedocs.io/en/latest/
+
+
+**PlantUML**
+
+https://plantuml.com/ru/
+
+https://pdf.plantuml.net/PlantUML_Language_Reference_Guide_ru.pdf
+
+**Mermaid**
+
+https://mermaid.js.org/
+
+https://mermaid.live/edit
