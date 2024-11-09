@@ -1,5 +1,5 @@
 ﻿---
-theme : white
+theme: white
 highlightTheme: white
 transition: none
 slideNumber: true
@@ -68,4 +68,4 @@ enableMenu: false
 ## CLI, TUI, GUI
 
 * Правила интерфейсов командной строки.
-* ASCII и ANSI-графика. Doom в терминале.
+* ASCII и ANSI-графика. Doom в терминале. "Бублик".

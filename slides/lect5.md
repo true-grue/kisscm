@@ -1,5 +1,5 @@
 ---
-theme : white
+theme: white
 highlightTheme: white
 transition: none
 slideNumber: true

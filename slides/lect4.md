@@ -1,5 +1,5 @@
 ---
-theme : white
+theme: white
 highlightTheme: white
 transition: none
 slideNumber: true
@@ -68,7 +68,7 @@ digraph {
 
 ---
 
-## Контекстно-свободные грамматики
+## Контекстно-свободная грамматика
 
 Добавим к регулярной грамматике рекурсию!
 

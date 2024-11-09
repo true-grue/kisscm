@@ -1,5 +1,5 @@
 ---
-theme : white
+theme: white
 highlightTheme: white
 transition: none
 slideNumber: true
@@ -125,4 +125,3 @@ enableMenu: false
 * *Робачевский А. М.* Операционная система UNIX, 2 изд.
 * *Шоттс Уильям*. Командная строка Linux. Полное руководство. 2-е межд. изд.
 * *Janssens J.* Data science at the command line.
-
