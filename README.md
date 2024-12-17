@@ -1,5 +1,7 @@
 # kisscm-docs
 
+[Сборники домашних заданий по Конфигурационному управлению](https://disk.yandex.ru/d/r2770-jsMS7VXg).
+
 ## Установка
 
 Сборка проекта настроена для ОС Windows. Для редактирования используется [Visual Studio Code](https://code.visualstudio.com/download).
