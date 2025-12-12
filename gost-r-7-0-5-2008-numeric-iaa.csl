@@ -37,8 +37,8 @@
     <term name="accessed-ru">дата обращения</term>
     <term name="volume-ru" form="short" text-case="sentence">Т.</term>
     <term name="page" form="short">
-      <single>P.</single>
-      <multiple>P.</multiple>
+      <single>С.</single>
+      <multiple>с.</multiple>
     </term>
     <term name="pages-ru">
        <single>страница</single>
@@ -283,9 +283,9 @@
     </layout>
   </citation>
   <!-- Bibliography -->
-  <bibliography entry-spacing="0" second-field-align="flush">
+  <bibliography entry-spacing="0">
     <layout suffix=".">
-      <text variable="citation-number" suffix="."/>
+      <text variable="citation-number" suffix=". "/>
       <choose> 
       <if type="article-journal chapter" match="any">
         <group delimiter=" // " suffix = ". ">

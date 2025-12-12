@@ -3,18 +3,7 @@ metadata:
   subtitle: Учебное пособие
   author: П.Н. Советов
   date: Москва – 2021
-  figureTitle: Рис. 
-  figPrefix: рис.
-  titleDelim: .
-  tableTitle: Таблица
-  tblPrefix: табл. 
-  numberSections: true
-  sectionsDepth: 3
-  secHeaderDelim: ". "
   toc-title: Оглавление
   bibliography: bibliography.bib
   link-citations: true
   csl: gost-r-7-0-5-2008-numeric-iaa.csl
-
-
-

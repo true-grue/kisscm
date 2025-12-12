@@ -1,0 +1,6 @@
+.menu-title {
+    font-size: 1.0em;
+}
+.on-this-page > ol > li > span {
+    display: none;
+}
