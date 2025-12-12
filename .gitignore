@@ -1,9 +1,11 @@
 $*.*
 ~*.*
 *.exe
-build/*.docx
-build/*.pdf
-build/*.html
+*.pyc
+__pycache__
+build
+img
+tools/hunspell
 
 ## Core latex/pdflatex auxiliary files:
 *.aux

@@ -1,21 +1,40 @@
 # kisscm-docs
 
-[Сборники домашних заданий по Конфигурационному управлению](https://disk.yandex.ru/d/r2770-jsMS7VXg).
+Для редактирования используется [Visual Studio Code](https://code.visualstudio.com/download).
 
-## Установка
+## Сборка книги на ОС Windows
 
-Сборка проекта настроена для ОС Windows. Для редактирования используется [Visual Studio Code](https://code.visualstudio.com/download).
+Для сборки проекта на ОС Windows необходимо выполнить следующие действия:
 
-1. Установить [pandoc](https://pandoc.org/).
-1. Установить [Tex Live](https://www.tug.org/texlive/acquire-netinstall.html) или [MikTeX](https://miktex.org/download). Убедитесь, что пакет microtype у вас имеет версию 3.0b или выше.
-1. Установить плагин [pandoc-crossref](https://lierdakil.github.io/pandoc-crossref/).
 1. Установить [make для Windows](http://gnuwin32.sourceforge.net/packages/make.htm).
-1. Установить [Python 3](https://www.python.org/downloads/).
-1. Установить [rsvg-convert](http://sourceforge.net/projects/tumagcc/files/rsvg-convert-2.40.20.7z/download).
+1. Установить [Python 3.12+](https://www.python.org/downloads/).
+1. Установить модули `docx2pdf` и `iuliia`: `pip install docx2pdf iuliia`
+1. Установить [pandoc](https://github.com/jgm/pandoc), поместив `pandoc.exe` в каталог `tools`.
+1. Установить [pandoc-crossref](https://github.com/lierdakil/pandoc-crossref), поместив `pandoc-crossref.exe` в каталог `tools`.
+1. Установить [rsvg-convert](http://sourceforge.net/projects/tumagcc/files/rsvg-convert-2.40.20.7z/download), поместив `rsvg-convert.exe` в каталог `tools`.
+1. Установить [mdbook](https://github.com/rust-lang/mdBook), поместив `mdbook.exe` в каталог `tools`.
+1. Установить [graphviz](https://graphviz.org/download/).
+1. Выполнить одну из команд для сборки книги в желаемый формат:
 
-## TODO
+```makefile
+make docx
+make pdf
+make web
+```
 
-* Реализовать вывод в HTML в духе [mdBook](https://rust-lang.github.io/mdBook/) и [Bookdown](https://bookdown.org/).
+## Сборка книги на ОС Linux
+
+Для сборки проекта на ОС Ubuntu Linux необходимо выполнить следующие действия:
+
+1. Установить [make](http://gnuwin32.sourceforge.net/packages/make.htm).
+1. Установить [Python 3.12+](https://www.python.org/downloads/).
+1. Установить модули `docx2pdf` и `iuliia`: `pip install docx2pdf iuliia`
+1. Установить остальные зависимости: `make install`.
+1. Выполнить команду для сборки книги:
+
+```makefile
+make web
+```
 
 ## Благодарности
 

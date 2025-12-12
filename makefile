@@ -1,55 +1,104 @@
-MD_FILES = md/introduction.md \
-	md/command_line.md \
-	md/package_managers.md \
-	md/conf_languages.md \
-	md/build_automation.md \
-	md/version_control.md \
-	md/docs_as_code.md \
-	md/virtual_machines.md \
-	md/bibliography.md
+include contents
 
-HTML_FILE = build/kisscm.html
-PDF_FILE = build/kisscm.pdf
-DOCX_FILE = build/kisscm.docx
+NAME = kisscm
 
-OPTIONS = -d default.yaml \
+PDF_FILE = build/$(NAME).pdf
+DOCX_FILE = build/$(NAME).docx
+
+MDBOOK = build/book
+MDBOOK_SRC = build/src
+MDBOOK_IMG = img
+
+BASE_OPTIONS = -d default.yaml \
 	--from=markdown+tex_math_single_backslash+tex_math_dollars+raw_tex \
 	--toc \
 	--resource-path=images \
-	-F pandoc-crossref \
 	--columns=1 \
+	--lua-filter=tools/pysvg.lua \
+
+DOCX_OPTIONS = $(BASE_OPTIONS) \
+	--metadata crossrefYaml=crossref-docx.yaml \
+	--filter tools/pandoc-crossref.exe \
+	--lua-filter=tools/pagebreak.lua \
+	--lua-filter=tools/upper.lua \
 	--citeproc \
-	--lua-filter=filters/pagebreak.lua \
-	--lua-filter=filters/upper.lua
+	--reference-doc=template.docx \
+	--output=$(DOCX_FILE) \
+	--to=docx \
+	-M lang:ru
+
+SITE_OPTIONS = $(BASE_OPTIONS) \
+	--metadata crossrefYaml=crossref.yaml \
+	--filter tools/pandoc-crossref.exe \
+	--lua-filter=tools/pagebreak.lua \
+	--citeproc \
+	--lua-filter=tools/mdbook.lua \
+	--extract-media=$(MDBOOK_IMG) \
+	--output=$(MDBOOK_SRC)/$(NAME).md \
+	--to=markdown-citations-implicit_figures+hard_line_breaks-pipe_tables-simple_tables-multiline_tables-grid_tables \
+	-M lang:ru
 
 ifeq ($(OS), Windows_NT)
-	MK_BUILD = if not exist build mkdir build
-	RM_BUILD = del /q build\*.*
+	MKBUILD = if not exist build mkdir build
+	MKSRC = if not exist build\src mkdir build\src
+	RMDIR = rmdir /s /q
+	MOVE = move /Y
 else
-	MK_BUILD = mkdir -p build
-	RM_BUILD = rm build/*.*
+	MKBUILD = mkdir -p build
+	MKSRC = mkdir -p $(MDBOOK_SRC)
+	RMDIR = rm -r
+	MOVE = mv
 endif
 
-all: html pdf docx
+all: spellcheck docx pdf web
 
-html: $(HTML_FILE)
+spellcheck:
+	python tools/spellcheck.py md
 
-pdf: $(PDF_FILE)
+docx:
+	$(MKBUILD)
+	tools/pandoc.exe $(MD) $(DOCX_OPTIONS)
+	python tools/bullets.py $(DOCX_FILE)
 
-docx: $(DOCX_FILE)
+pdf: docx
+	python tools/doc2pdf.py $(DOCX_FILE) $(PDF_FILE)
 
-$(HTML_FILE): $(MD_FILES)
-	$(MK_BUILD)
-	pandoc $(MD_FILES) $(OPTIONS) --output=$(HTML_FILE) --to=html5 --mathjax --self-contained
+web:
+	$(MKBUILD)
+	$(MKSRC)
+	tools/pandoc.exe $(MD) $(SITE_OPTIONS)
+	$(MOVE) $(MDBOOK_IMG) $(MDBOOK_SRC)
+	python tools/mdbook.py $(MDBOOK_SRC)/$(NAME).md $(MDBOOK_IMG) Spisok-literatury.md
+	tools/mdbook.exe build
 
-$(PDF_FILE): $(MD_FILES)
-	$(MK_BUILD)
-	pandoc $(MD_FILES) $(OPTIONS) --metadata-file pdf.yaml --output=$(PDF_FILE) --to=latex --pdf-engine=xelatex
-
-$(DOCX_FILE): $(MD_FILES)
-	$(MK_BUILD)
-	pandoc $(MD_FILES) $(OPTIONS) --reference-doc=template.docx --output=$(DOCX_FILE) --to=docx
-	python filters/bullets.py $(DOCX_FILE)
+serve: web
+	tools/mdbook.exe serve
 
 clean:
-	$(RM_BUILD)
+	-$(RMDIR) build
+	-$(RMDIR) img
+
+install-pandoc:
+	wget -O pandoc-3.8.3.tar.gz https://github.com/jgm/pandoc/releases/download/3.8.3/pandoc-3.8.3-linux-amd64.tar.gz
+	tar -xvzf pandoc-3.8.3.tar.gz
+	mv pandoc-3.8.3/bin/pandoc tools/pandoc.exe
+	rm pandoc-3.8.3.tar.gz
+	rm -rf pandoc-3.8.3
+
+install-pandoc-crossref:
+	wget -O pandoc-crossref.tar.xz https://github.com/lierdakil/pandoc-crossref/releases/download/v0.3.22b/pandoc-crossref-Linux-X64.tar.xz
+	tar -xvf pandoc-crossref.tar.xz
+	mv pandoc-crossref tools/pandoc-crossref.exe
+	rm pandoc-crossref*
+
+install-mdbook:
+	wget -O mdbook.tar.gz https://github.com/rust-lang/mdBook/releases/download/v0.5.1/mdbook-v0.5.1-x86_64-unknown-linux-gnu.tar.gz
+	tar -xvzf mdbook.tar.gz
+	mv mdbook tools/mdbook.exe
+	rm mdbook*
+
+install-graphviz:
+	sudo apt update
+	sudo apt install -y graphviz
+
+install: install-pandoc install-pandoc-crossref install-mdbook install-graphviz

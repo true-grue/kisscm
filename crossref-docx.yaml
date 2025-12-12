@@ -1,0 +1,28 @@
+figureTitle: Рисунок
+figPrefix: рис.
+titleDelim: .
+eqnPrefixTemplate: ($$i$$)
+tableTitle: Таблица
+tblPrefix: табл.
+numberSections: true
+sectionsDepth: 3
+secHeaderDelim: .&nbsp;
+tableEqns: true
+eqnBlockTemplate: |
+  `
+  <w:pPr>
+    <w:tabs>
+      <w:tab w:val="center" w:leader="none" w:pos="4680" />
+      <w:tab w:val="right" w:leader="none" w:pos="9960" />
+    </w:tabs>
+  </w:pPr>
+  <w:r>
+    <w:tab />
+  </w:r>
+  `{=openxml} $$t$$
+  `
+  <w:r>
+    <w:tab />
+  </w:r>
+  `{=openxml} $$i$$
+eqnBlockInlineMath: true

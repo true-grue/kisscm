@@ -1,0 +1,13 @@
+[book]
+title = "Конфигурационное управление"
+language = "ru"
+src = "build/src"
+
+[build]
+build-dir = "build/book"
+
+[output.html]
+mathjax-support = true
+no-section-label = true
+additional-css = ["book.css"]
+git-repository-url = "https://github.com/true-grue/kisscm"
