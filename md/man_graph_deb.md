@@ -2,7 +2,7 @@
 
 Менеджер пакетов apt используется для автоматического управления установкой и настройкой пакетов @sovietov2021scm в Debian и в различных дистрибутивах Linux, основанных на Debian, таких как Ubuntu, Kubuntu, Kali Linux @debianpm. Например, сеанс работы с командной строкой для установки пакета `jq` может иметь следующий вид:
 
-```
+```bash
 ~$ apt update
 Сущ:1 http://ru.archive.ubuntu.com/ubuntu jammy InRelease
 Пол:2 http://ru.archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
@@ -364,7 +364,7 @@ cowsay.graphml  deb.py  jq.graphml  main  universe  yed.py
 ------------------  ---------------------------------------  ---------------
 pip                 pypi.org/pypi/{name}/json                JSON
 npm                 registry.npmjs.org/{name}                JSON
-crates              crates.io/api/v1/crates/{name}/{version} JSON
+Cargo               crates.io/api/v1/crates/{name}/{version} JSON
 Maven               repo1.maven.org/maven2                   XML, pom-файл
 NuGet               api.nuget.org/v3                         XML
 apk                 dl-cdn.alpinelinux.org/alpine/           APKINDEX.tar.gz
