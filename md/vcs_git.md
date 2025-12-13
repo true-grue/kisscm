@@ -49,7 +49,7 @@ Git @git является децентрализованной СКВ. Разр�
 
 Создание Git-репозитория в текущем каталоге:
 
-```default
+```bash
 ~# mkdir my_repo
 ~# cd my_repo
 ~/my_repo# git init .
@@ -58,7 +58,7 @@ Initialized empty Git repository in /root/my_repo/.git/
 
 Состояние git-репозитория:
 
-```default
+```bash
 ~/my_repo# git status
 On branch master
 
@@ -71,7 +71,7 @@ nothing to commit (create/copy files and use "git add" to track)
 
 Создадим теперь первый файл в репозитории:
 
-```default
+```bash
 ~/my_repo# echo "# Some text" > readme.md
 root@DESKTOP-OI5FV17:~/my_repo# git status
 On branch master
@@ -98,7 +98,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 Проиндексировать файлы можно с помощью команды Git add:
 
-```default
+```bash
 ~/my_repo# git add readme.md
 ~/my_repo# git status
 On branch master
@@ -112,7 +112,7 @@ Changes to be committed:
 
 После добавления всех необходимых файлов в зону индекса (это можно сделать одной командой: `git add .`) создается коммит, но если в Git еще не заданы данные пользователя, то необходимо сначала их указать:
 
-```default
+```bash
 ~/my_repo# git config --local user.name "Peter"
 ~/my_repo# git config --local user.email "peter@example.com"
 ~/my_repo# git commit -m "first commit"
@@ -123,7 +123,7 @@ Changes to be committed:
 
 Теперь первая версия проекта зафиксирована. Информацию о коммитах выдает следующая команда:
 
-```default
+```bash
 ~/my_repo# git log
 commit 3ba9fa7980a4ba36086e66389b1ef95cbbf317e2 (HEAD -> master)
 Author: Peter <peter@example.com>
@@ -148,7 +148,7 @@ Date:   Tue Nov 16 17:08:47 2021 +0300
 
 Предположим, работа над репозиторием my_repo развивалась следующим образом:
 
-```default
+```bash
 git branch tests
 git add ...
 git commit -m "..."
@@ -165,7 +165,7 @@ git commit -m "..."
 
 В какой-то момент ветки сливаются (merge):
 
-```default
+```bash
 git checkout master
 git merge tests
 ```
@@ -176,9 +176,9 @@ git merge tests
 
 ![Слияние веток](git3.svg){#fig:git3}
 
-Еще одним способом объединения веток является перебазирование, осуществляемой командой `git rebase`:
+Еще одним способом объединения веток является перебазирование, осуществляемое командой `git rebase`:
 
-```default
+```bash
 git checkout master
 git rebase tests
 ```
@@ -203,7 +203,7 @@ git rebase tests
 
 Попробуем найти в нашем тестовом репозитории my_repo (в его состоянии на момент первого коммита) информацию о хеш-значениях веток:
 
-```default
+```bash
 # cd .git
 ~/my_repo/.git# ls
 COMMIT_EDITMSG  HEAD  branches  config  description  hooks  index  info  logs  objects  refs
@@ -219,7 +219,7 @@ master
 
 Зная хеш-значение объекта master можно попробовать найти его в таблице объектов:
 
-```default
+```bash
 ~/my_repo/.git/refs/heads# cd ..
 ~/my_repo/.git/refs# cd ..
 ~/my_repo/.git# cd objects/
@@ -234,7 +234,7 @@ a9fa7980a4ba36086e66389b1ef95cbbf317e2
 
 Файлы, содержащие объекты внутри objects, хранятся в двоичном формате. Для отображения информации об объекте по его хеш-значению можно использовать следующую команду:
 
-```default
+```bash
 ~/my_repo# git cat-file -p 3ba9fa7980a4ba36086e66389b1ef95cbbf317e2
 tree 074f8b59918b080288259854fcf875a6b8e543fe
 author Peter <peter@example.com> 1637071727 +0300
@@ -251,7 +251,7 @@ first commit
 
 Попробуем теперь изучить объект дерева по его полученному хеш-значению:
 
-```default
+```bash
 ~/my_repo# git cat-file -p 074f8b59918b080288259854fcf875a6b8e543fe
 100644 blob 7dfce3922d94e459d1545a9fc568be0369eaa973    readme.md
 ```
