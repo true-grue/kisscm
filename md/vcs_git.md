@@ -50,16 +50,16 @@ Git @git является децентрализованной СКВ. Разр�
 Создание Git-репозитория в текущем каталоге:
 
 ```bash
-~# mkdir my_repo
-~# cd my_repo
-~/my_repo# git init .
+~$ mkdir my_repo
+~$ cd my_repo
+~/my_repo$ git init .
 Initialized empty Git repository in /root/my_repo/.git/
 ```
 
 Состояние git-репозитория:
 
 ```bash
-~/my_repo# git status
+~/my_repo$ git status
 On branch master
 
 No commits yet
@@ -72,8 +72,8 @@ nothing to commit (create/copy files and use "git add" to track)
 Создадим теперь первый файл в репозитории:
 
 ```bash
-~/my_repo# echo "# Some text" > readme.md
-root@DESKTOP-OI5FV17:~/my_repo# git status
+~/my_repo$ echo "# Some text" > readme.md
+~/my_repo$ git status
 On branch master
 
 No commits yet
@@ -99,8 +99,8 @@ nothing added to commit but untracked files present (use "git add" to track)
 Проиндексировать файлы можно с помощью команды Git add:
 
 ```bash
-~/my_repo# git add readme.md
-~/my_repo# git status
+~/my_repo$ git add readme.md
+~/my_repo$ git status
 On branch master
 
 No commits yet
@@ -113,9 +113,9 @@ Changes to be committed:
 После добавления всех необходимых файлов в зону индекса (это можно сделать одной командой: `git add .`) создается коммит, но если в Git еще не заданы данные пользователя, то необходимо сначала их указать:
 
 ```bash
-~/my_repo# git config --local user.name "Peter"
-~/my_repo# git config --local user.email "peter@example.com"
-~/my_repo# git commit -m "first commit"
+~/my_repo$ git config --local user.name "Peter"
+~/my_repo$ git config --local user.email "peter@example.com"
+~/my_repo$ git commit -m "first commit"
 [master (root-commit) 3ba9fa7] first commit
  1 file changed, 1 insertion(+)
  create mode 100644 readme.md
@@ -124,7 +124,7 @@ Changes to be committed:
 Теперь первая версия проекта зафиксирована. Информацию о коммитах выдает следующая команда:
 
 ```bash
-~/my_repo# git log
+~/my_repo$ git log
 commit 3ba9fa7980a4ba36086e66389b1ef95cbbf317e2 (HEAD -> master)
 Author: Peter <peter@example.com>
 Date:   Tue Nov 16 17:08:47 2021 +0300
@@ -204,29 +204,29 @@ git rebase tests
 Попробуем найти в нашем тестовом репозитории my_repo (в его состоянии на момент первого коммита) информацию о хеш-значениях веток:
 
 ```bash
-# cd .git
-~/my_repo/.git# ls
+$ cd .git
+~/my_repo/.git$ ls
 COMMIT_EDITMSG  HEAD  branches  config  description  hooks  index  info  logs  objects  refs
-~/my_repo/.git# cd refs
-~/my_repo/.git/refs# ls
+~/my_repo/.git$ cd refs
+~/my_repo/.git/refs$ ls
 heads  tags
-~/my_repo/.git/refs# cd heads
-~/my_repo/.git/refs/heads# ls
+~/my_repo/.git/refs$ cd heads
+~/my_repo/.git/refs/heads$ ls
 master
-~/my_repo/.git/refs/heads# cat master
+~/my_repo/.git/refs/heads$ cat master
 3ba9fa7980a4ba36086e66389b1ef95cbbf317e2
 ```
 
 Зная хеш-значение объекта master можно попробовать найти его в таблице объектов:
 
 ```bash
-~/my_repo/.git/refs/heads# cd ..
-~/my_repo/.git/refs# cd ..
-~/my_repo/.git# cd objects/
-~/.git/objects# ls
+~/my_repo/.git/refs/heads$ cd ..
+~/my_repo/.git/refs$ cd ..
+~/my_repo/.git$ cd objects/
+~/.git/objects$ ls
 07  3b  7d  info  pack
-~/my_repo/.git/objects# cd 3b
-~/my_repo/.git/objects/3b# ls
+~/my_repo/.git/objects$ cd 3b
+~/my_repo/.git/objects/3b$ ls
 a9fa7980a4ba36086e66389b1ef95cbbf317e2
 ```
 
@@ -235,7 +235,7 @@ a9fa7980a4ba36086e66389b1ef95cbbf317e2
 Файлы, содержащие объекты внутри objects, хранятся в двоичном формате. Для отображения информации об объекте по его хеш-значению можно использовать следующую команду:
 
 ```bash
-~/my_repo# git cat-file -p 3ba9fa7980a4ba36086e66389b1ef95cbbf317e2
+~/my_repo$ git cat-file -p 3ba9fa7980a4ba36086e66389b1ef95cbbf317e2
 tree 074f8b59918b080288259854fcf875a6b8e543fe
 author Peter <peter@example.com> 1637071727 +0300
 committer Peter <peter@example.com> 1637071727 +0300
@@ -252,7 +252,7 @@ first commit
 Попробуем теперь изучить объект дерева по его полученному хеш-значению:
 
 ```bash
-~/my_repo# git cat-file -p 074f8b59918b080288259854fcf875a6b8e543fe
+~/my_repo$ git cat-file -p 074f8b59918b080288259854fcf875a6b8e543fe
 100644 blob 7dfce3922d94e459d1545a9fc568be0369eaa973    readme.md
 ```
 

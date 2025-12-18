@@ -31,7 +31,7 @@ cat README.md | tr A-Z a-z | tr -cs A-Za-z '\n' | sort | uniq | grep -vx -f unix
 Ниже показан пример вывода колонки №5 из данных, предоставленных вызовом `ls -l`:
 
 ```bash
-localhost:~# ls -l
+localhost:~$ ls -l
 total 36
 -rw-r--r--    1 root     root           114 Jul  5  2020 bench.py
 -rwxr-xr-x    1 root     root            51 Nov  4 18:56 fact.sh
@@ -42,7 +42,7 @@ drwxr-xr-x    2 root     root            37 Nov  4 18:01 foo
 -rwxr-xr-x    1 root     root             6 Nov  4 18:44 lsl
 -rw-r--r--    1 root     root           151 Jul  5  2020 readme.txt
 -rwxr-xr-x    1 root     root            36 Nov  4 18:50 test.sh
-localhost:~# ls -l | awk '{ print $5 }'
+localhost:~$ ls -l | awk '{ print $5 }'
  
 114
 51
@@ -58,7 +58,7 @@ localhost:~# ls -l | awk '{ print $5 }'
 Средствами `awk` легко подсчитать общий размер файлов:
 
 ```bash
-localhost:~# ls -l | awk '{ s += $5 } END { print s }'
+localhost:~$ ls -l | awk '{ s += $5 } END { print s }'
 569
 ```
 
@@ -73,7 +73,7 @@ curl -s "https://hacker-news.firebaseio.com/v0/item/$N.json" | jq '.["title"]' |
 Вот как выглядит вывод этой программы:
 
 ```bash
-root@Server584432:~# ./hn.sh
+localhost:~$ ./hn.sh
  ________________________________________
 / "Finishing my first game while working \
 \ full-time"                             /

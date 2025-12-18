@@ -86,7 +86,7 @@ install-pandoc:
 	rm -rf pandoc-3.8.3
 
 install-pandoc-crossref:
-	wget -O pandoc-crossref.tar.xz https://github.com/lierdakil/pandoc-crossref/releases/download/v0.3.22b/pandoc-crossref-Linux-X64.tar.xz
+	wget -O pandoc-crossref.tar.xz https://github.com/lierdakil/pandoc-crossref/releases/download/v0.3.18.1/pandoc-crossref-Linux-X64.tar.xz
 	tar -xvf pandoc-crossref.tar.xz
 	mv pandoc-crossref tools/pandoc-crossref.exe
 	rm pandoc-crossref*

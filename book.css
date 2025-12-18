@@ -4,3 +4,9 @@
 .on-this-page > ol > li > span {
     display: none;
 }
+.chapter {
+    line-height: 1.5em;
+}
+figure {
+    text-align: center;
+}
