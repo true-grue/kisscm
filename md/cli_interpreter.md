@@ -13,28 +13,28 @@
 Ниже показан пример сеанса работы в Bash:
 
 ```bash
-localhost:~# pwd
+localhost:~$ pwd
 /root
-localhost:~# ls -l
+localhost:~$ ls -l
 total 16
 -rw-r--r--    1 root     root           114 Jul  5  2020 bench.py
 -rw-r--r--    1 root     root            76 Jul  3  2020 hello.c
 -rw-r--r--    1 root     root            22 Jun 26  2020 hello.js
 -rw-r--r--    1 root     root           151 Jul  5  2020 readme.txt
-localhost:~# echo 'new file' > new_file.txt
-localhost:~# cat new_file.txt
+localhost:~$ echo 'new file' > new_file.txt
+localhost:~$ cat new_file.txt
 new file
-localhost:~# mkdir new_dir
-localhost:~# cp new_file.txt new_dir/
-localhost:~# rm new_file.txt
-localhost:~# ls -l
+localhost:~$ mkdir new_dir
+localhost:~$ cp new_file.txt new_dir/
+localhost:~$ rm new_file.txt
+localhost:~$ ls -l
 total 20
 -rw-r--r--    1 root     root           114 Jul  5  2020 bench.py
 -rw-r--r--    1 root     root            76 Jul  3  2020 hello.c
 -rw-r--r--    1 root     root            22 Jun 26  2020 hello.js
 drwxr-xr-x    2 root     root            66 Nov  4 17:16 new_dir
 -rw-r--r--    1 root     root           151 Jul  5  2020 readme.txt
-localhost:~# ls -l new_dir/
+localhost:~$ ls -l new_dir/
 total 4
 -rw-r--r--    1 root     root             9 Nov  4 17:16 new_file.txt
 ```
@@ -54,7 +54,7 @@ total 4
 Узнать об аргументах, которые принимает команда, можно с помощью аргумента `--help`:
 
 ```bash
-localhost:~# ls --help
+localhost:~$ ls --help
 BusyBox v1.31.1 () multi-call binary.
  
 Usage: ls [-1AaCxdLHRFplinshrSXvctu] [-w WIDTH] [FILE]...
@@ -100,13 +100,13 @@ List directory contents
 В примере ниже используется stdout и stderr:
 
 ```bash
-localhost:~# pwd
+localhost:~$ pwd
 /root
-localhost:~# pwd > pwd.txt
-localhost:~# pwd --foo
+localhost:~$ pwd > pwd.txt
+localhost:~$ pwd --foo
 sh: pwd: illegal option --
-localhost:~# pwd --foo 2> err.txt
-localhost:~# cat err.txt
+localhost:~$ pwd --foo 2> err.txt
+localhost:~$ cat err.txt
 sh: pwd: illegal option --
 ```
 
@@ -115,8 +115,8 @@ sh: pwd: illegal option --
 Перенаправление ввода/вывода превращается в очень мощную конструкцию при использовании такой организации команд, при которой вывод одной команды попадает на вход другой команды. Эта конструкция представляет собой конвейер и реализуется с помощью символа `|`, как показано в примере далее:
 
 ```bash
-localhost:~# pwd > pwd.txt
-localhost:~# rev --help
+localhost:~$ pwd > pwd.txt
+localhost:~$ rev --help
 Usage: rev [options] [file ...]
  
 Reverse lines characterwise.
@@ -126,41 +126,41 @@ Options:
  -V, --version  display version
  
 For more details see rev(1).
-localhost:~# rev pwd.txt
+localhost:~$ rev pwd.txt
 toor/
-localhost:~# pwd | rev
+localhost:~$ pwd | rev
 toor/
 ```
 
 В Bash имеется удобный синтаксис для развертывания файловых путей (globbing). С помощью символов `*` (произвольная последовательность) и `?` (произвольный символ) реализуется подстановка имен файлов в духе регулярных выражений, как в примере ниже:
 
 ```bash
-localhost:~# echo *
+localhost:~$ echo *
 bench.py err.txt hello.c hello.js new_dir pwd.txt readme.txt rev
-localhost:~# echo *.c
+localhost:~$ echo *.c
 hello.c
-localhost:~# echo p*
+localhost:~$ echo p*
 pwd.txt
-localhost:~# echo *.??
+localhost:~$ echo *.??
 bench.py hello.js
 ```
 
 В Bash есть возможность задать переменные и, кроме того, имеется ряд уже определенных переменных. Обратите внимание на особенности создания переменных:
 
 ```bash
-localhost:~# A = 42
+localhost:~$ A = 42
 sh: A: not found
-localhost:~# A=42
-localhost:~# A
+localhost:~$ A=42
+localhost:~$ A
 sh: A: not found
-localhost:~# echo $A
+localhost:~$ echo $A
 42
 ```
 
 С помощью команды `set` можно, помимо прочего, узнать, какие переменные сейчас заданы для текущего пользователя:
 
 ```bash
-localhost:~# set
+localhost:~$ set
 A='42'
 HISTFILE='/root/.ash_history'
 HOME='/root'
@@ -189,9 +189,9 @@ script='/etc/profile.d/*.sh'
 Linux является многопользовательской ОС и информация о зарегистрированных пользователях находится в конфигурационном файле `/etc/passwd`:
 
 ```bash
-localhost:~# whoami
+localhost:~$ whoami
 root
-localhost:~# cat /etc/passwd
+localhost:~$ cat /etc/passwd
 root:x:0:0:root:/root:/bin/ash
 bin:x:1:1:bin:/bin:/sbin/nologin
 daemon:x:2:2:daemon:/sbin:/sbin/nologin
@@ -228,7 +228,7 @@ svn:x:101:102:svn:/var/svn:/sbin/nologin
 Вспомним, как выглядит вывод команды `ls` в long-формате:
 
 ```bash
-localhost:~# ls -l
+localhost:~$ ls -l
 total 20
 -rw-r--r--    1 root     root           114 Jul  5  2020 bench.py
 drwxr-xr-x    2 root     root            37 Nov  4 18:01 foo
@@ -262,13 +262,13 @@ drwxr-xr-x    2 root     root            37 Nov  4 18:01 foo
 При создании пользовательских команд необходимо указать права на исполнение, как показано в примере ниже:
 
 ```bash
-localhost:~# echo "ls -l" > lsl
-localhost:~# lsl
+localhost:~$ echo "ls -l" > lsl
+localhost:~$ lsl
 sh: lsl: not found
-localhost:~# ./lsl
+localhost:~$ ./lsl
 sh: ./lsl: Permission denied
-localhost:~# chmod +x lsl
-localhost:~# ./lsl
+localhost:~$ chmod +x lsl
+localhost:~$ ./lsl
 total 24
 -rw-r--r--    1 root     root           114 Jul  5  2020 bench.py
 drwxr-xr-x    2 root     root            37 Nov  4 18:01 foo
@@ -298,16 +298,16 @@ echo $@
 Результат ее выполнения показан далее:
 
 ```bash
-localhost:~# ./test.sh 1 2 3 4 5
+localhost:~$ ./test.sh 1 2 3 4 5
 ./test.sh
 1 2
 5
 1 2 3 4 5
-localhost:~# echo $?
+localhost:~$ echo $?
 0
-localhost:~# foo
+localhost:~$ foo
 sh: foo: not found
-localhost:~# echo $?
+localhost:~$ echo $?
 127
 ```
 
@@ -323,7 +323,7 @@ seq "$1" | xargs echo | tr " " "*" | bc
 Команда `seq` (sequence) генерирует последовательность чисел:
 
 ```bash
-localhost:~# seq 5
+localhost:~$ seq 5
 1
 2
 3
@@ -334,35 +334,35 @@ localhost:~# seq 5
 Команда `xargs` (extended arguments) форматирует список из стандартного ввода:
 
 ```bash
-localhost:~# seq 5 | xargs
+localhost:~$ seq 5 | xargs
 1 2 3 4 5
 ```
 
 Команда `tr` (translate) осуществляет замену текстовых фрагментов:
 
 ```bash
-localhost:~# seq 5 | xargs | tr " " "*"
+localhost:~$ seq 5 | xargs | tr " " "*"
 1*2*3*4*5
 ```
 
 Команда `bc` (basic calculator) представляет собой калькулятор:
 
 ```bash
-localhost:~# echo "2+2" | bc
+localhost:~$ echo "2+2" | bc
 4
 ```
 
 Для вычислений в Bash можно также использовать скобки специального вида:
 
 ```bash
-localhost:~# echo $((2 + 2))
+localhost:~$ echo $((2 + 2))
 4
 ```
 
 Для получения результата команды в виде аргумента другой команды можно также использовать скобки специального вида:
 
 ```bash
-localhost:~# echo "My folder is $(pwd)"
+localhost:~$ echo "My folder is $(pwd)"
 My folder is /root
 ```
 
