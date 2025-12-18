@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   width="595.28003pt"
-   height="320.89001pt"
-   viewBox="0 0 595.28 320.89001"
+   width="595pt"
+   height="320pt"
+   viewBox="0 0 595 320"
    version="1.2"
    id="svg2004"
    sodipodi:docname="docs2.svg"
@@ -30,6 +30,7 @@
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg2004" />
+  <rect id="rect82" width="595" height="320" x="0" y="0" style="fill:#ffffff" />
   <defs
      id="defs385">
     <g
