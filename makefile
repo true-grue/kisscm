@@ -68,7 +68,7 @@ web:
 	$(MKSRC)
 	tools/pandoc.exe $(MD) $(SITE_OPTIONS)
 	$(MOVE) $(MDBOOK_IMG) $(MDBOOK_SRC)
-	python tools/mdbook.py $(MDBOOK_SRC)/$(NAME).md $(MDBOOK_IMG) Spisok-literatury.md
+	python tools/mdbook.py $(MDBOOK_SRC)/$(NAME).md Spisok-literatury.md
 	tools/mdbook.exe build
 
 serve: web

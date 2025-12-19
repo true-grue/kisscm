@@ -14,17 +14,6 @@ def overwrite(fname, rewrite):
         file.truncate()
 
 
-def add_extension_to_svg_images(dirname):
-    for name in os.listdir(dirname):
-        if re.match(r'^[a-f0-9]{40}$', name):
-            path = os.path.join(dirname, name)
-            os.rename(path, path + '.svg')
-
-
-def add_extension_to_svg_image_references(md, i):
-    return re.sub(rf'src="{i}/([a-f0-9]{{{40}}})"', rf'src="{i}/\1.svg"', md)
-
-
 def link_citations_to_url(md, bib_url):
     return re.sub(r'\[([0-9]+)\]\(#([^)]+)\)', rf'[\1]({bib_url}#\2)', md)
 
@@ -112,12 +101,9 @@ def dump_sections(sections, dirname):
 
 
 source = sys.argv[1]
-imgdir = sys.argv[2]
-biburl = sys.argv[3]
+biburl = sys.argv[2]
 mdbook = os.path.dirname(source)
 
-add_extension_to_svg_images(os.path.join(mdbook, imgdir))
-overwrite(source, lambda md: add_extension_to_svg_image_references(md, imgdir))
 overwrite(source, lambda md: link_citations_to_url(md, biburl))
 
 sections = make_sections(source)

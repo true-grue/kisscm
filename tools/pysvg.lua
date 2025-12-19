@@ -66,7 +66,7 @@ end
 function CodeBlock(el)
     if el.attr.classes[1] == "pysvg" then
         local data = pandoc.pipe("python", {"-"}, "from tools.pysvg import *\n" .. el.text)
-        local fname = pandoc.sha1(data)
+        local fname = pandoc.sha1(data) .. ".svg"
         pandoc.mediabag.insert(fname, "image/svg+xml", data)
         local dgr_opt = diagram_options(el, "#")
         local image = pandoc.Image(dgr_opt.alt, fname, "", dgr_opt["image-attr"])
