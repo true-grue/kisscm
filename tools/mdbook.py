@@ -1,21 +1,7 @@
 import typing
 import os
 import sys
-import re
 import iuliia
-
-
-def overwrite(fname, rewrite):
-    with open(fname, 'r+', encoding='utf-8') as file:
-        content = file.read()
-        content = rewrite(content)
-        file.seek(0)
-        file.write(content)
-        file.truncate()
-
-
-def link_citations_to_url(md, bib_url):
-    return re.sub(r'\[([0-9]+)\]\(#([^)]+)\)', rf'[\1]({bib_url}#\2)', md)
 
 
 class Section(typing.NamedTuple):
@@ -100,12 +86,7 @@ def dump_sections(sections, dirname):
     dump_file(Section('SUMMARY', body), dirname)
 
 
-source = sys.argv[1]
-biburl = sys.argv[2]
-mdbook = os.path.dirname(source)
-
-overwrite(source, lambda md: link_citations_to_url(md, biburl))
-
-sections = make_sections(source)
+book = sys.argv[1]
+sections = make_sections(book)
 sections = cleanup_sections(sections)
-dump_sections(sections, mdbook)
+dump_sections(sections, os.path.dirname(book))

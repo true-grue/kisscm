@@ -36,6 +36,7 @@ SITE_OPTIONS = $(BASE_OPTIONS) \
 	--extract-media=$(MDBOOK_IMG) \
 	--output=$(MDBOOK_SRC)/$(NAME).md \
 	--to=markdown-citations-implicit_figures+hard_line_breaks-pipe_tables-simple_tables-multiline_tables-grid_tables \
+	-M biburl=Spisok-literatury.md \
 	-M lang:ru
 
 ifeq ($(OS), Windows_NT)
@@ -68,7 +69,7 @@ web:
 	$(MKSRC)
 	tools/pandoc.exe $(MD) $(SITE_OPTIONS)
 	$(MOVE) $(MDBOOK_IMG) $(MDBOOK_SRC)
-	python tools/mdbook.py $(MDBOOK_SRC)/$(NAME).md Spisok-literatury.md
+	python tools/mdbook.py $(MDBOOK_SRC)/$(NAME).md
 	tools/mdbook.exe build
 
 serve: web
