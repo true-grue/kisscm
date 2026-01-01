@@ -16,6 +16,12 @@ jobs:
       run: make install
     - name: Build book
       run: make web
+    - name: Generate the sitemap
+      uses: cicirello/generate-sitemap@v1
+      with:
+        base-url-path: https://true-grue.github.io/kisscm/
+        path-to-root: ./build/book
+        exclude-paths: /404.html
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
