@@ -16,9 +16,7 @@ def make_title(line):
     return line.strip()
 
 
-def make_sections(md):
-    with open(md, 'r', encoding='utf-8') as file:
-        lines = file.readlines()
+def make_sections(lines):
     sections = []
     section = None
     in_code = False
@@ -38,7 +36,9 @@ def make_sections(md):
 
 
 def get_subsections(section):
-    return [s for s in section.content if isinstance(s, Section)]
+    return [subsection
+            for subsection in section.content
+            if isinstance(subsection, Section)]
 
 
 def cleanup_sections(sections):
@@ -86,7 +86,8 @@ def dump_sections(sections, dirname):
     dump_file(Section('SUMMARY', body), dirname)
 
 
-book = sys.argv[1]
-sections = make_sections(book)
-sections = cleanup_sections(sections)
-dump_sections(sections, os.path.dirname(book))
+src = sys.argv[1]
+out = os.path.dirname(src)
+with open(src, 'r', encoding='utf-8') as f:
+    sections = make_sections(f.readlines())
+dump_sections(cleanup_sections(sections), out)
