@@ -1,66 +1,65 @@
 INTRO = md/intro.md \
-		md/intro_about.md \
-		md/intro_definition.md \
-		md/intro_book.md
+        md/intro_about.md \
+        md/intro_book.md
 
 CLI = md/cli.md \
-		md/cli_workflow.md \
-		md/cli_interpreter.md \
-		md/cli_tools.md \
-		md/cli_pipe.md \
-		md/cli_lang.md \
-		md/cli_oneliners.md \
-		md/cli_oneliners_github.md \
-		md/cli_oneliners_xlsx.md \
-		md/cli_oneliners_hirsch.md \
-		md/cli_oneliners_ex.md \
-		md/cli_emu.md
+        md/cli_workflow.md \
+        md/cli_interpreter.md \
+        md/cli_tools.md \
+        md/cli_pipe.md \
+        md/cli_lang.md \
+        md/cli_oneliners.md \
+        md/cli_oneliners_github.md \
+        md/cli_oneliners_xlsx.md \
+        md/cli_oneliners_hirsch.md \
+        md/cli_oneliners_ex.md \
+        md/cli_emu.md
 
 MAN = md/man.md \
-		md/man_versioning.md \
-		md/man_core.md \
-		md/man_graph.md \
-		md/man_graph_deb.md \
-		md/man_smt.md
+        md/man_versioning.md \
+        md/man_core.md \
+        md/man_graph.md \
+        md/man_graph_deb.md \
+        md/man_smt.md
 
 VCS = md/vcs.md \
-		md/vcs_git.md \
-		md/vcs_diff.md \
-		md/vcs_model.md \
-		md/vcs_objects.md
+        md/vcs_git.md \
+        md/vcs_diff.md \
+        md/vcs_model.md \
+        md/vcs_objects.md
 
 LANGS = md/langs.md \
-		md/langs_infra.md \
-		md/langs_grammars.md \
-		md/langs_comp.md
+        md/langs_infra.md \
+        md/langs_grammars.md \
+        md/langs_comp.md
 
 BUILD = md/build.md \
-		md/build_plan.md \
-		md/build_make.md
+        md/build_plan.md \
+        md/build_make.md
 
 VM = md/vm.md \
-		md/vm_common.md \
-		md/vm_lang.md \
-		md/vm_comp.md
+        md/vm_common.md \
+        md/vm_lang.md \
+        md/vm_comp.md
 
 DOCS = md/docs.md \
-		md/docs_markup.md \
-		md/docs_diagrams.md \
-		md/docs_gen.md
+        md/docs_markup.md \
+        md/docs_diagrams.md \
+        md/docs_gen.md
 
 EXAM = md/exam.md \
-	md/exam_git.md \
-	md/exam_deps.md
+    md/exam_git.md \
+    md/exam_deps.md
 
 BIB = md/bibliography.md
 
 MD = $(INTRO) \
-	$(CLI) \
-	$(MAN) \
-	$(VCS) \
-	$(LANGS) \
-	$(BUILD) \
-	$(VM) \
-	$(DOCS) \
-	$(EXAM) \
-	$(BIB)
+    $(CLI) \
+    $(MAN) \
+    $(VCS) \
+    $(LANGS) \
+    $(BUILD) \
+    $(VM) \
+    $(DOCS) \
+    $(EXAM) \
+    $(BIB)
