@@ -21,7 +21,8 @@ end
 function Div(el)
     -- Convert references to paragraphs with id.
     if el.classes:includes('csl-entry') then
-        local text = pandoc.utils.stringify(el.content[1].content)
+        local tree = pandoc.Pandoc(el.content[1].content)
+        local text = pandoc.write(tree, 'html'):gsub('\n+', ' ')
         local html = '<p id="' .. el.identifier .. '">' .. text .. '</p>'
         return pandoc.RawBlock('html', html)
     end
